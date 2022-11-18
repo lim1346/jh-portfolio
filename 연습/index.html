@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi</title>
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<section class="main_section">
+    <p>When the path isn’t clear, the<br>
+        team you turn to should be.</p>
+</section>
+<section class="opacity">
+</section>
+<section class="first_section">
+    <p>Cooper Perkins combines enlightened engineering with years of<br>
+        substantive experience to solve our partners’ most challenging<br>
+        business problems.</p>
+</section>
+<section class="second_section">
+    <p>Cooper Perkins combines enlightened engineering with years of<br>
+        substantive experience to solve our partners’ most challenging<br>
+        business problems.</p>
+</section>
+
+<body>
+
+</body>
+<script>
+    $(window).ready(function () {
+        var max = 1100;
+        $(window).scroll(function () {
+            var scrollPX = $(this).scrollTop();
+            if (scrollPX < max) {
+                $(".opacity").css({
+                    "opacity": (max - scrollPX) / max
+                });
+            } else {
+                $(".opacity").css({
+                    "opacity": 0
+                });
+            }
+        });
+    });
+    window.addEventListener('scroll', function () {
+        console.log(window.scrollY)
+    });
+</script>
+<script>
+    function vh(v) {
+        var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+        return (v * h) / 100;
+    }
+
+    $(window).on("scroll", function () {
+        if ($(window).scrollTop() > vh(100)) {
+            $(".main_section").addClass("on");
+            $(".first_section").addClass("on");
+            $(".opacity").css('display', 'none');
+        } else {
+            //remove the background property so it comes transparent again (defined in your css)
+            $(".main_section").removeClass("on");
+            $(".first_section").removeClass("on");
+            $(".opacity").css('display', 'flex');
+        }
+    });
+</script>
+
+</html>
