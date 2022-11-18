@@ -5,13 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hi</title>
-    <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;500;600;700&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-</head>
+    </head>
+<div class="header">
+    <div class="header_container">
+        <h1 class="logo">Lim</h1>
+        <ul>
+            <li><a>Profile</a></li>
+            <li><a>Work</a></li>
+            <li><a>Contact</a></li>
+        </ul>
+    </div>
+</div>
 <section class="main_section">
-    <p>When the path isn’t clear, the<br>
-        team you turn to should be.</p>
+    <p>안녕하세요.</p>
 </section>
 <section class="opacity">
 </section>
@@ -31,7 +43,7 @@
 </body>
 <script>
     $(window).ready(function () {
-        var max = 1100;
+        var max = 1200;
         $(window).scroll(function () {
             var scrollPX = $(this).scrollTop();
             if (scrollPX < max) {

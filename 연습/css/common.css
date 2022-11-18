@@ -1,5 +1,54 @@
 @charset "utf-8";
 
+@font-face {
+    font-family: 'GyeonggiBatang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GyeonggiBatang.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'GyeonggiBatang';
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    border-bottom: 2px solid #333;
+    background: white;
+    height: 50px;
+    font-family: 'Dosis', sans-serif;
+}
+
+.header .header_container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+
+}
+
+.header .header_container ul {
+    display: flex;
+    gap: 30px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.header .header_container ul li {
+    transition: all 0.3s;
+    position: relative;
+}
+
+.header .header_container ul li a {
+    cursor: pointer;
+}
+
+
 .main_section {
     box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.3);
     height: 100vh;
@@ -8,18 +57,22 @@
     z-index: 100;
     background: white;
 }
+
 .main_section.on {
     margin-bottom: 0;
 }
+
 .main_section p {
     font-size: 32px;
     line-height: 1.2;
-    padding-left:100px;
-    position:absolute;
-    bottom:100px;
+    padding-left: 100px;
+    position: absolute;
+    bottom: 100px;
+    font-family: 'GyeonggiBatang';
 }
+
 .opacity {
-    background:black;
+    background: black;
     position: fixed;
     z-index: 99;
     width: 100vw;
@@ -37,8 +90,16 @@
     display: flex;
     align-items: center;
     width: 100%;
-    height:100vh
+    height: 100vh;
 }
+
 .first_section.on {
     position: relative;
+}
+
+
+@media (hover: hover) {
+    .header .header_container ul li:hover {
+        transform: translateY(-4px);
+    }
 }
