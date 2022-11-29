@@ -11,74 +11,98 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;500;600;700&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    </head>
-<div class="header">
-    <div class="header_container">
-        <h1 class="logo">Lim</h1>
-        <ul>
-            <li><a>Profile</a></li>
-            <li><a>Work</a></li>
-            <li><a>Contact</a></li>
-        </ul>
+    <script src="js/common.js"></script>
+</head>
+
+<body class="on">
+    <div class="loading_wrap">
+        <div class="wrapper">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="shadow"></div>
+            <div class="shadow"></div>
+            <div class="shadow"></div>
+        </div>
     </div>
-</div>
-<section class="main_section">
-    <p>안녕하세요.</p>
-</section>
-<section class="opacity">
-</section>
-<section class="first_section">
-    <p>Cooper Perkins combines enlightened engineering with years of<br>
-        substantive experience to solve our partners’ most challenging<br>
-        business problems.</p>
-</section>
-<section class="second_section">
-    <p>Cooper Perkins combines enlightened engineering with years of<br>
-        substantive experience to solve our partners’ most challenging<br>
-        business problems.</p>
-</section>
+    <div class="header">
+        <div class="header_container">
+            <h1 class="logo"><img src="images/logo.png" /></h1>
+            <ul class="desk_gnb">
+                <li><a class="menu1">Menu 1</a></li>
+                <li><a>Menu 2</a></li>
+                <li><a>Menu 3</a></li>
+            </ul>
+            <div class="mobile_gnb">
+                <button class="menu_btn">
+                    <span class="line"></span>
+                </button>
+                <ul class="mobile_gnb_list">
+                    <li><a>Menu 1</a></li>
+                    <li><a>Menu 2</a></li>
+                    <li><a>Menu 3</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="wrap">
+        <section class="main_section">
+            <div class="container">
+                <div class="section-parallax parallax-00"></div>
+                <div class="section-parallax parallax-01"></div>
+                <div class="text_wrap">
+                    <p class="parallax-fade-top">Chase your Passion</p>
+                </div>
+            </div>
+        </section>
+        <section class="opacity">
+        </section>
+        <section id="section1" class="first_section">
+            <div class="tab_wrap">
+                <div class="tab_line">
+                    <div class="light-ray"></div>
+                </div>
+                <div class="tab_ul">
+                    <div class="tab_menu1">menu 1</div>
+                    <div class="tab_menu2">menu 2</div>
+                    <div class="tab_menu3">menu 3</div>
+                    <div class="tab_menu4">menu 4</div>
+                </div>
+                <div class="tab_body">
+                    <div class="tab_body_1 on">
+                        <p>그리고 ES6의 모든 기능을 컴파일하려면 plugin 하나하나 다가져올 필요가없습니다. preset을 가져오면 됩니다.</p>
+                    </div>
+                    <div class="tab_body_2">
+                        <p>이때 아무일도 일어나지않습니다. 왜냐면 그냥 바벨만 실행했으니까 그렇습니다. 바벨을 실행할 때의 preset 과 plugin을 추가하지 않았기 때문이죠.</p>
+                    </div>
+                    <div class="tab_body_3">
+                        <p>지금까지는 단순히 컴파일만해서 결과값을 콘솔창에 출력받았습니다.
+                            컴파일된 파일로 추출하기 위해선 옵션을 추가해줍니다.</p>
+                    </div>
+                    <div class="tab_body_4">
+                        <p>Cooper Perkins combines enlightened engineering with years of<br>
+                            substantive experience to solve our partners’ most challenging<br>
+                            business problems.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="section2" class="second_section">
+            <div class="serction2_wrap">
 
-<body>
-
+            </div>
+        </section>
+        <section id="section3" class="second_section">
+            <p>Cooper Perkins combines enlightened engineering with years of<br>
+                substantive experience to solve our partners’ most challenging<br>
+                business problems.</p>
+        </section>
+    </div>
+    <footer>
+        <div class="footer_container">
+            <p>Copyright © 2022 HENRY All rights reserved.</p>
+        </div>
+    </footer>
 </body>
-<script>
-    $(window).ready(function () {
-        var max = 1200;
-        $(window).scroll(function () {
-            var scrollPX = $(this).scrollTop();
-            if (scrollPX < max) {
-                $(".opacity").css({
-                    "opacity": (max - scrollPX) / max
-                });
-            } else {
-                $(".opacity").css({
-                    "opacity": 0
-                });
-            }
-        });
-    });
-    window.addEventListener('scroll', function () {
-        console.log(window.scrollY)
-    });
-</script>
-<script>
-    function vh(v) {
-        var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-        return (v * h) / 100;
-    }
-
-    $(window).on("scroll", function () {
-        if ($(window).scrollTop() > vh(100)) {
-            $(".main_section").addClass("on");
-            $(".first_section").addClass("on");
-            $(".opacity").css('display', 'none');
-        } else {
-            //remove the background property so it comes transparent again (defined in your css)
-            $(".main_section").removeClass("on");
-            $(".first_section").removeClass("on");
-            $(".opacity").css('display', 'flex');
-        }
-    });
-</script>
 
 </html>
