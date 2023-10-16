@@ -21,7 +21,7 @@ body::-webkit-scrollbar-track {
 }
 
 body {
-    font-family: 'GyeonggiBatang';
+    font-family: 'NanumSquareRound';
     scroll-behavior: smooth;
 }
 body.on {
@@ -176,66 +176,6 @@ body.on {
     cursor: pointer;
 }
 
-.mobile_gnb {
-    display: none;
-}
-
-.menu_btn {
-    width: 30px;
-    height: 30px;
-    position: relative;
-    justify-self: right;
-    align-self: center;
-}
-
-.menu_btn .line {
-    display: block;
-    width: 22px;
-    height: 2px;
-    border-radius: 4px;
-    background-color: #0A174E;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.menu_btn .line::after,
-.menu_btn .line::before {
-    content: "";
-    display: block;
-    width: 22px;
-    height: 2px;
-    border-radius: 4px;
-    background-color: #0A174E;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: all 0.5s;
-}
-
-.menu_btn .line::before {
-    top: 7px;
-}
-
-.menu_btn .line::after {
-    top: -7px;
-}
-
-.mobile_gnb.on .menu_btn .line {
-    background-color: transparent;
-}
-
-.mobile_gnb.on .menu_btn .line::before {
-    transform: translate(-50%, -50%) rotate(-45deg);
-    top: 50%;
-}
-
-.mobile_gnb.on .menu_btn .line::after {
-    transform: translate(-50%, -50%) rotate(45deg);
-    top: 50%;
-}
-
 button {
     background: none;
     border: none;
@@ -258,11 +198,6 @@ button {
     z-index: 100;
     transform: scale(48000%);
 }
-
-.mobile_gnb_list {
-    display: none;
-}
-
 
 /**************** header end*******************/
 
@@ -352,15 +287,27 @@ button {
     width: 100%;
     height: 100vh;
     justify-content: center;
+    gap: 180px;
 
 }
 
+.pro_img {
+    background: url(../images/pro_img.png) no-repeat;
+    width: 280px;
+    height: 344px;
+    text-indent: -9999px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
 .second_section {
     height: 100vh;
 }
 
 .first_section.on {
     position: relative;
+    width: 1280px;
+    margin: 0 auto;
 }
 
 .tab_wrap {
@@ -415,6 +362,7 @@ button {
 
 .tab_body {
     position: relative;
+    height: 330px;
 }
 
 .tab_body div {
@@ -434,6 +382,13 @@ button {
 .tab_body div.on {
     opacity: 1;
     margin-left: 0px;
+}
+
+.tab_body_1 h3{
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 20px;
 }
 
 
@@ -460,21 +415,4 @@ footer {
 
 .footer_container p {
     font-size: 14px;
-}
-
-@media (max-width: 769px) {
-    .header .header_container .desk_gnb {
-        display: none;
-    }
-
-    .mobile_gnb {
-        display: block;
-    }
-}
-
-
-@media (hover: hover) {
-    .header .header_container ul li:hover {
-        transform: translateY(-4px);
-    }
 }
