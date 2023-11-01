@@ -334,7 +334,7 @@ button {
 }
 .leaf_1.on {
     right: -110px;
-    bottom: 20px;
+    bottom: -30px;
 }
 .leaf_2 {
     background: url(../images/img_leaf2.png) no-repeat;
@@ -610,9 +610,30 @@ button {
     box-shadow: 0 0 10px -5px #555;
 }
 .serction_wrap .mobi_1 {
-    background: url(/images/moimg_1.png) no-repeat;
+    background: url(../images/moimg_1.png) no-repeat;
     background-size: 300px;
 }
+.serction_wrap .mobi_2 {
+    background: url(../images/moimg_2.png) no-repeat;
+    background-size: 300px;
+}
+.serction_wrap .mobi_3 {
+    background: url(../images/moimg_3.png) no-repeat;
+    background-size: 300px;
+}
+.serction_wrap .mobi_4 {
+    background: url(../images/moimg_4.png) no-repeat;
+    background-size: 300px;
+}
+.serction_wrap .mobi_5 {
+    background: url(../images/moimg_5.png) no-repeat;
+    background-size: 300px;
+}
+.serction_wrap .mobi_6 {
+    background: url(../images/moimg_6.png) no-repeat;
+    background-size: 300px;
+}
+
 
 
 @media all and (max-width:1280px) {
@@ -639,7 +660,7 @@ button {
         margin-top: -50px;
     }
     .padding {
-        padding: 0 10px;
+        padding: 0 16px;
     }
     .serction_wrap {
         justify-content: center;
@@ -682,7 +703,7 @@ button {
         height: 146px;
     }
     .leaf_1.on {
-        right: -100px;
+        right: -90px;
         bottom: 5px;
     }
     .leaf_2 {
@@ -733,15 +754,22 @@ button {
     }
     #section2 {
         padding-top: 0;
-        margin-top: -150px;
     }
     #section2 .flex {
         display: grid;
+        padding-top: 170px;
     }
     .project_title {
-        font-size: 22px;
+        font-size: 20px;
     }
     .work_text p {
-        width: 100%;
+        width: 100%; 
+        margin-bottom: 40px;
+    }
+    .end_text h3 {
+        font-size: 34px;
+    }
+    .end_text p {
+        font-size: 16px;
     }
 }
