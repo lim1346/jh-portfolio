@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> 
+    <link rel="shortcut icon" href="favicon.ico">
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="js/jquery.fullpage.js"></script>
+    <link rel="stylesheet" href="css/jquery.fullpage.css">
+    <script src="js/common.js"></script>
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/bd4e63e095.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="header">
+        <ul>
+            <li><a href="main.html">Main</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="marketing.html">Marketing</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+        </ul>
+    </div>
+    <nav class="gnb">
+        <ul>
+            <li><a href="#section1" data-menuanchor="section1">Main</a></li>
+            <li><a href="#section2" data-menuanchor="section2">About</a></li>
+            <li><a href="#section3" data-menuanchor="section3">Marketing</a></li>
+            <li><a href="#section4" data-menuanchor="section4">Channel</a></li>
+            <li><a href="#section5" data-menuanchor="section5">Portfolio</a></li>
+        </ul>
+    </nav>
+    <div id="fullpage">
+        <div class="section section1">
+            <div class="main_title" data-aos="fade-down">
+                <img src="images/logo.png" class="section_logo" alt="section_logo" />
+                <p class="section_title">반갑습니다.<br />
+                브랜드 마케팅기업<br />
+                GML입니다.</p>
+            </div>
+            <div class="scroll-downs">
+                <p class="scroll_text">Scroll Down</p>
+                <div class="mousey">
+                  <div class="scroller"></div>
+                </div>
+              </div>
+            <div class="slide slide1">
+            </div>
+            <div class="slide slide2"></div>
+        </div>
+        <div class="section section2">
+            <div class="container">
+                <div class="text_wrap">
+                    <h3 class="title">사업을 하시나요?</h3>
+                    <p>유튜브에는 너무 많은 <span class="blue_text">성공 사례</span>들이 존재하고<br>
+                    현실에는 너무 많은 <span class="blue_text">실패 사례</span>들이 존재합니다.</p>
+                    <p>성공한 자들의 <span class="blue_text">‘노하우’</span>는 이제는 모두가아는<br>
+                        보통의 방식이 되어버렸습니다. </p>
+                    <p>GML은 새로운 <span class="blue_text">성공 사례</span>의 표본을 제시합니다.</p>
+                    <button type="button" class="go_btn blue_btn" onclick="location.href='about.html'">About <i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                <img src="images/section2_img.png" alt="섹션2 이미지" class="section_img" />
+            </div>
+        </div>
+        <div class="section section3">
+            <div class="container">
+                <img src="images/section3_img.png" alt="섹션3 이미지" class="section_img" />
+                <div class="text_wrap">
+                    <h3 class="title">GML만의 체계화된<br />
+                        브랜딩 프로세스</h3>
+                    <p>300여개의 제품, 20여개의 카테고리 제품과<br>
+                        서비스를 <span class="blue_text">직접</span> 소싱하고, 제작하고, 브랜딩해본<br>
+                        경험을 통해 클라이언트의 제품과 서비스를 <span class="blue_text">컨설팅</span>합니다.   </p>
+                    <p>명확한 <span class="blue_text">‘이유’</span>와 <span class="blue_text">‘대안’</span>을 제시하는 곳 <span class="blue_text">GML</span>입니다. </p>
+                    <button type="button" class="go_btn blue_btn" onclick="location.href='marketing.html'">Marketing <i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                
+            </div>
+        </div>
+        <div class="section section4">
+            <div class="container">
+                <div class="section4_img">
+                    <img src="images/light_png.png" alt="전구" class="light_img" />
+                </div>
+                <div class="section4_text">
+                    <h3 class="title">사막에서 모래를 팔 수도 있습니다.</h3>
+                    <p>사막과 모래와 그리고 소비자를 이해한다면요.<br>
+                        같은 채널에 다른 대안을 제시합니다.</p>
+                </div>
+            </div>
+        </div>
+        <div class="section section5">
+            <div class="grid">
+                <div class="text_box">
+                    <h3>포트폴리오</h3>
+                    <p>GML과 함께 걸어온<br>
+                    클라디언트입니다.</p>
+                </div>
+                <div class="port_wrap">
+                    <div class="port">
+                        <img src="images/port_1.png" alt="포트폴리오1" />
+                        <p class="port_title">파우더 A</p>
+                        <p>6개월 매출 20억 달성</p>
+                    </div>
+                    <div class="port">
+                        <img src="images/port_2.png" alt="포트폴리오2" />
+                        <p class="port_title">파우더 B</p>
+                        <p>매출 200%증가, 자사명 검색 2000%증가</p>
+                    </div>
+                    <div class="port">
+                        <img src="images/port_3.png" alt="포트폴리오3" />
+                        <p class="port_title">건강 기능식품</p>
+                        <p>1개월 매출 6000만원 달성</p>
+                    </div>
+                </div>
+                <button type="button" class="go_btn blue_btn" onclick="location.href='portfolio.html'">Portfolio <i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+    <script> 
+        AOS.init();
+        /* 주석부분과 같이 AOS API - Global Setting 가능
+        AOS.init({
+            offset: 120,
+            delay: 0,
+            duration: 400,
+            easing: 'ease',
+            once: false,
+            mirror: false,
+            anchorPlacement: 'top-bottom'
+        });    
+        */
+    </script>
+</body>

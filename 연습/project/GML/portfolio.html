@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> 
+    <link rel="shortcut icon" href="favicon.ico">
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="js/common.js"></script>
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/bd4e63e095.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="header">
+        <ul>
+            <li><a href="main.html">Main</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="marketing.html">Marketing</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+        </ul>
+    </div>
+    <div class="wrap portfolio">
+        <div class="main_img">
+            <h3 class="title">Portfolio</h3>
+        </div>
+        <div class="content_1">
+            <div class="content_text_wrap">
+                <p class="content_title first_title" data-aos="fade-down" data-aos-duration="1000">GML과 함께 걸어온 클라디언트</p>
+                <p data-aos="fade-up" data-aos-duration="1000">GML에서 <span class="blue_text">차별화된 전략</span>을 경험해보세요.  
+                </p>
+            </div>
+        </div>
+        <div class="padding_10">
+            <div class="prot_wrap">
+                <div class="port_div" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="images/port_1.png" alt="포트폴리오 이미지" />
+                    <p class="port_name">파우더A</p>
+                    <P class="port_text">6개월 매출 20억 달성</P>
+                </div>
+                <div class="port_div" data-aos="fade-up" data-aos-duration="1400">
+                    <img src="images/port_2.png" alt="포트폴리오 이미지" />
+                    <p class="port_name">파우더B</p>
+                    <P class="port_text">매출 200% 증가, 자사명 검색 2000%증가</P>
+                </div>
+                <div class="port_div" data-aos="fade-up" data-aos-duration="1800">
+                    <img src="images/port_3.png" alt="포트폴리오 이미지" />
+                    <p class="port_name">파우더C</p>
+                    <P class="port_text">ROAS 500% 달성, 250% 향상</P>
+                </div>
+                <div class="port_div" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="images/portfolio_1.png" alt="포트폴리오 이미지" />
+                    <p class="port_name">알약A</p>
+                    <P class="port_text">매출 100%증가, CPC 2000원으로 800원 감소</P>
+                </div>
+                <div class="port_div" data-aos="fade-up" data-aos-duration="1400">
+                    <img src="images/portfolio_2.png" alt="포트폴리오 이미지" />
+                    <p class="port_name">건강기능식품</p>
+                    <P class="port_text">1개 VBKD매출 6000만원 달성</P>
+                </div>
+                <div class="port_div" data-aos="fade-up" data-aos-duration="1800">
+                    <img src="images/portfolio_3.png" alt="포트폴리오 이미지" />
+                    <p class="port_name">인테리어 소품샵</p>
+                    <P class="port_text">매출 0원 -> 매출 2500만원</P>
+                </div>
+                <div class="port_div" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="images/portfolio_4.png" alt="포트폴리오 이미지" />
+                    <p class="port_name">건축사무소</p>
+                    <P class="port_text">상담 2~3건 -> 상담 30건</P>
+                </div>
+                <div class="port_div" data-aos="fade-up" data-aos-duration="1400">
+                    <img src="images/portfolio_5.png" alt="포트폴리오 이미지" />
+                    <p class="port_name">네일샵</p>
+                    <P class="port_text">인터넷 참고 내방고객 10명 -> 40명</P>
+                </div>
+                <div class="port_div" data-aos="fade-up" data-aos-duration="1800">
+                    <img src="images/portfolio_6.png" alt="포트폴리오 이미지" />
+                    <p class="port_name">캠핑용품</p>
+                    <P class="port_text">브랜드 런칭, 종합마케팅진행</P>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script> 
+        AOS.init();
+        /* 주석부분과 같이 AOS API - Global Setting 가능
+        AOS.init({
+            offset: 120,
+            delay: 0,
+            duration: 400,
+            easing: 'ease',
+            once: false,
+            mirror: false,
+            anchorPlacement: 'top-bottom'
+        });    
+        */
+    </script>
+</body>

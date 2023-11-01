@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="shortcut icon" href="favicon.ico">
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="js/common.js"></script>
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/bd4e63e095.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="header">
+        <ul>
+            <li><a href="main.html">Main</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="marketing.html">Marketing</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+        </ul>
+    </div>
+    <div class="wrap about">
+        <div class="main_img">
+            <h3 class="title">About Us</h3>
+        </div>
+        <div class="content_1">
+            <div class="content_text_wrap">
+                <p class="content_title first_title" data-aos="fade-down" data-aos-duration="1000">이상하지 않나요?</p>
+                <p data-aos="fade-up" data-aos-duration="1000">우리 제품이 더 <span class="blue_text">좋고</span>, <span class="blue_text">저렴</span>한데<br/>
+                    우리 서비스가 더 <span class="blue_text">획기적</span>이고<br/>
+                    우리 브랜드가 더 <span class="blue_text">매력적</span>인데
+                </p>
+                <p data-aos="fade-up" data-aos-duration="1000">잘 안팔리고<br />
+                    잘 모르고<br />
+                    잘 안알려집니다.
+                </p>
+            </div>
+            <img data-aos="fade-up" data-aos-duration="1000" src="images/about_img.png" alt="어바웃이미지" class="about_img" />
+            <div class="grid_text">
+                <p class="content_text_wrap" data-aos="fade-up" data-aos-duration="1000" >
+                    이 이상한 현상을 분석하고<br />
+                    이 이상한 현상에 답을하는  
+                </p>
+                <p data-aos="zoom-in" data-aos-duration="1000" class="content_title">우리는 브랜딩 마케팅 기업<br>
+                <span class="blue_text">G</span>rae <span class="blue_text">M</span>arketing <span class="blue_text">L</span>ap입니다.</p>
+            </div>
+        </div>
+        <div class="content_2">
+            <p class="content_title" data-aos="fade-up" data-aos-duration="1000">HISTORY</p>
+            <p class="content_2_title" data-aos="fade-up" data-aos-duration="1000">더 좋은 제품과 서비스로<br />
+                세상을 바꾸는 기업 <span class="blue_text">그래코퍼레이션</span>.<br />
+                우리가 걸어온 길입니다.
+            </p>
+            <div class="history_wrap">
+                <ul class="first_ul">
+                    <li data-aos="fade-right" data-aos-duration="1000">
+                        <p class="history_day">2020 04</p>
+                        <p class="history_title">시서스가루 브랜드 누티 런칭</p>
+                    </li>
+                    <li data-aos="fade-right" data-aos-duration="1000">
+                        <p class="history_day">2020 06</p>
+                        <p class="history_title">누티판매 2만개 돌파</p>
+                    </li>
+                    <li data-aos="fade-right" data-aos-duration="1000">
+                        <p class="history_day">2020 12</p>
+                        <p class="history_title">매출 20억돌파 </p>
+                    </li>
+                </ul>
+                <ul class="sec_ul">
+                    <li data-aos="fade-left" data-aos-duration="1000">
+                        <p class="history_day">2020 03</p>
+                        <p class="history_title">(주)그래코퍼레이션 설립</p>
+                    </li>
+                    <li data-aos="fade-left" data-aos-duration="1000">
+                        <p class="history_day">2020 05</p>
+                        <p class="history_title">시서스가루 브랜드 보타미 런칭<br />
+                            건강기능식품 브랜드 셀렉트핏 런칭</p>
+                    </li>
+                    <li data-aos="fade-left" data-aos-duration="1000">
+                        <p class="history_day">2020 09</p>
+                        <p class="history_title">매출 10억돌파</p>
+                    </li>
+                    <li data-aos="fade-left" data-aos-duration="1000">
+                        <p class="history_day">2021 03</p>
+                        <p class="history_title">ICR ISO 품질경영시스템 인증<br />
+                            환경경영시스템 인증</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script> 
+        AOS.init();
+        /* 주석부분과 같이 AOS API - Global Setting 가능
+        AOS.init({
+            offset: 120,
+            delay: 0,
+            duration: 400,
+            easing: 'ease',
+            once: false,
+            mirror: false,
+            anchorPlacement: 'top-bottom'
+        });    
+        */
+    </script>
+</body>

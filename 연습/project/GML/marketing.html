@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> 
+    <link rel="shortcut icon" href="favicon.ico">
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="js/common.js"></script>
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/bd4e63e095.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="header">
+        <ul>
+            <li><a href="main.html">Main</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="marketing.html">Marketing</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+        </ul>
+    </div>
+    <div class="wrap about marketing">
+        <div class="main_img">
+            <h3 class="title">Marketing</h3>
+        </div>
+        <div class="content_1">
+            <div class="content_text_wrap">
+                <p class="content_title first_title" data-aos="fade-down" data-aos-duration="1000">GML만의 마케팅전략</p>
+                <p data-aos="fade-up" data-aos-duration="1000">
+                    모두가 ‘성별’과 ‘연령’에 집중할 때<br />
+                    우리는 핵심 타겟의 ‘<span class="blue_text">라이프 스타일</span>’에 집중합니다. 
+                </p>
+                <p data-aos="fade-up" data-aos-duration="1000">
+                    모두가 N사 C사 상위노출에 급급할 때<br />
+                    우리는 매출을 향한 <span class="blue_text">다른 대안</span>을 제시합니다.
+                </p>
+            </div>
+            <img data-aos="fade-up" data-aos-duration="1000" src="images/marketing_img.png" alt="마케팅이미지" class="about_img" />
+            <div class="grid_text">
+                <p class="content_text_wrap" data-aos="fade-up" data-aos-duration="1000" >
+                    우리는 브랜드 언어를<br />
+                    소비자의 언어로 제시하고
+                </p>
+                <p class="content_text_wrap" data-aos="fade-up" data-aos-duration="1000">            
+                    소비자의 언어를 통해<br />
+                    브랜드를 완성시킵니다.
+                </p>
+                <p data-aos="zoom-in" data-aos-duration="1000" class="content_title">
+                    우리는 <span class="blue_text">마케팅</span>을 통해<br />
+                    <span class="blue_text">브랜딩</span>을 만듭니다.
+                </p>
+            </div>
+        </div>
+        <div class="content_2">
+           <div class="marketing_wrap" data-aos="fade-left" data-aos-duration="1000">
+                <div class="marketing_1">
+                    <img src="images/step_1.png" alt="스텝1" />
+                    <div class="step_text_wrap">
+                        <p class="blue_text">Step. 1</p>
+                        <p class="step_title">브랜드 분석 / 진단</p>
+                        <p class="step_text">
+                            현재의 비지니스를 판단하고 성장 프로세스를 제공합니다.<br class="mobi_none" />
+                            GML은 자체 개발한 비즈니스 분석 툴을 통해<br class="mobi_none" />
+                            현재 브랜드의 문제점을 진단하고, 전반적인 해결책을 제시합니다.
+                        </p>
+                    </div>
+                </div>
+                <div class="marketing_2" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="step_text_wrap">
+                        <p class="blue_text">Step. 2</p>
+                        <p class="step_title">브랜드 마케팅 대행</p>
+                        <p class="step_text">
+                            브랜드의 수명주기를 이해하고, 브랜드의 시작과 끝을 책임집니다.<br class="mobi_none" />
+                            브랜드의 생명 단계별 마케팅을 제시하고<br class="mobi_none" />
+                            팀단위의 컨설팅 및 대행을 진행합니다.
+                        </p>
+                    </div>
+                    <img src="images/step_2.png" alt="스텝2" />
+                </div>
+                <div class="marketing_3" data-aos="fade-left" data-aos-duration="1000">
+                    <img src="images/step_3.png" alt="스텝3" />
+                    <div class="step_text_wrap">
+                        <p class="blue_text">Step. 3</p>
+                        <p class="step_title">성과 / 효과 리포트</p>
+                        <p class="step_text">
+                            목표 마케팅 채널의 성과 결과를 보고하고<br class="mobi_none" />
+                            단순한 퍼포먼스적 성과 향상을 위한 대한 제시가 아닌<br class="mobi_none" />
+                            브랜드의 성장성을 위한 구체적인 개선점을 제안합니다.
+                        </p>
+                    </div>
+                </div>
+           </div>
+        </div>
+    </div>
+    <script> 
+        AOS.init();
+        /* 주석부분과 같이 AOS API - Global Setting 가능
+        AOS.init({
+            offset: 120,
+            delay: 0,
+            duration: 400,
+            easing: 'ease',
+            once: false,
+            mirror: false,
+            anchorPlacement: 'top-bottom'
+        });    
+        */
+    </script>
+</body>
