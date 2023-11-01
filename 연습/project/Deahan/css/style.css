@@ -1,0 +1,2341 @@
+@charset "UTF-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    font-family: 'Noto Sans KR', serif;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a{text-decoration: none;color: #333;}
+
+
+
+
+
+
+/* pc */
+.loading {
+    position: fixed;
+    background: white;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    text-align: center;
+    display: grid;
+}
+
+.loading .span_wrap {
+    align-self: center;
+}
+.loading .span_wrap p {
+    margin-top: 15px;
+    font-weight: 400;
+    font-size: 18px;
+}
+  .loading span {
+    display: inline-block; /* span 내부요소들을 한줄로 세우기 */
+    width: 10px;
+    height: 10px;
+    background-color: gray;
+    border-radius: 50%;    /* span을 동그랗게 */
+    animation: loading 1s 0s linear infinite;
+    /* 이벤트명  반복시간  딜레이시간  이벤트처리부드럽게  이벤트무한반복*/
+  }
+
+  .loading span:nth-child(1) {  /*loading의 자식 중 첫번째 span*/
+    /*nth-child : 형제 사이에서의 순서*/
+    animation-delay: 0s;
+    background-color: #8a9161;
+  }
+
+  .loading span:nth-child(2) {
+    animation-delay: 0.2s;
+    background-color:#c6cc9f;
+  }
+
+  .loading span:nth-child(3) {
+    animation-delay: 0.4s;
+    background-color: #e2e7c3;
+  }
+  @keyframes loading {        /*loading이라는 keyframe 애니메이션*/
+    0%,                      /* 0, 50, 100은 구간*/
+    100% {
+      opacity: 0;            /* 안보였다가 */
+      transform: scale(0.5); /*transform의 scale로 요소를 확대 또는 축소할 수 있음*/   
+    }
+    50% {
+      opacity: 1;             /* 보였다가 */
+      transform: scale(1.2); /* 1.2배 */
+    }
+  }
+
+
+    #fullpage .section .container {
+        width: 1280px;
+        margin: 0 auto;
+    }
+    /* 페이지 네비 */
+    #fp-nav ul {
+        position: relative;
+    }
+    #fp-nav ul::after{
+        content: '';
+        position: absolute;
+        top: -10px;
+        right: 11px;
+        width: 1px;
+        height: 120%;
+        background: #999;
+    
+    }
+    body #fp-nav ul li {
+        padding: 6px 0 6px 0;
+    }
+    body #fp-nav ul li:hover a.active span {
+        width: 6px;
+        height: 6px;
+        margin:0;
+    }
+    #fp-nav ul li a:after {
+        font-weight: 300;
+        content: 'Main';
+        position: absolute;
+        width: 50px;
+        top: 4px;
+        right: 15PX;
+        color: #bababa;
+        font-size: 13px;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+        opacity: 1;
+        text-align: right;
+    }
+    #fp-nav ul li:nth-child(2) a:after {
+        content: 'Intro';
+    }
+    #fp-nav ul li:nth-child(3) a:after {
+        content: '대한다원';
+    }
+    #fp-nav ul li:nth-child(4) a:after {
+        content: '그래';
+    }
+    #fp-nav ul li:nth-child(5) a:after {
+        content: 'GML';
+    }
+    #fp-nav ul li:nth-child(6) a:after {
+        content: 'End';
+    }
+    #fp-nav ul li a.active:after {
+        opacity: 1;
+        color: #79877a;
+        font-weight: 600;
+    }
+    #fp-nav ul li a span {
+        opacity: 0;
+    }
+    body #fp-nav  ul li a.active span {
+        margin: 0;
+        width: 6px;
+        height: 6px;
+        background: #79877a;
+        opacity: 1;
+    }
+    
+    /* scroll ani*/
+
+    #fullpage .se1 a {
+        padding-top: 60px;
+      }
+    #fullpage .se1 a span {
+        position: absolute;
+        bottom: 100px;
+        left: 50%;
+        width: 30px;
+        height: 50px;
+        margin-left: -15px;
+        border: 2px solid #7e7e7e7a;
+        border-radius: 50px;
+        box-sizing: border-box;
+        opacity: 0;
+        transition: all 1s;
+
+      }
+      #fullpage .se1 a span.on {
+        opacity: 1;
+        bottom: 150px;
+      }
+    #fullpage .se1 a span::before {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        content: '';
+        width: 6px;
+        height: 6px;
+        margin-left: -3px;
+        background-color: #7e7e7e;
+        border-radius: 100%;
+        -webkit-animation: sdb10 2s infinite;
+        animation: sdb10 2s infinite;
+        box-sizing: border-box;
+      }
+      @-webkit-keyframes sdb10 {
+        0% {
+          -webkit-transform: translate(0, 0);
+          opacity: 0;
+        }
+        40% {
+          opacity: 1;
+        }
+        80% {
+          -webkit-transform: translate(0, 20px);
+          opacity: 0;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+      @keyframes sdb10 {
+        0% {
+          transform: translate(0, 0);
+          opacity: 0;
+        }
+        40% {
+          opacity: 1;
+        }
+        80% {
+          transform: translate(0, 20px);
+          opacity: 0;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+    
+    
+    /* section 1 */
+    #fullpage .se1 .container {
+        text-align: center;
+    }
+    #fullpage .se1 .container .logo {
+        background: url(../images/logo.png) no-repeat;
+        width: 220px;
+        height: 220px;
+        margin: 0 auto;
+        text-indent: -9999px;
+        position: relative;
+        top: -50px;
+        transition: all 1s;
+        opacity: 0;
+    }
+    #fullpage .se1 .container .logo.on {
+        top: 0;
+        opacity: 1;
+    }
+    #fullpage .se1 .container h3 {
+        font-weight: 900;
+        font-size: 40px;
+        margin-top: 30px;
+        margin-bottom: 100px;
+        position: relative;
+        top: 50px;
+        transition: all 1s;
+        opacity: 0;
+    }
+    #fullpage .se1 .container h3.on {
+        top: 0;
+        opacity: 1;
+    }
+    #fullpage .se1 .container h3:after {
+        content: '';
+        position: absolute;
+        bottom: -50px;
+        left: 50%;
+        margin-left: -18px;
+        width: 36px;
+        height: 4px;
+        background: #79877a;
+    }
+    #fullpage .se1 .container span {
+        font-size: 18px;
+        position: relative;
+        top: 50px;
+        transition: all 1s;
+        opacity: 0;
+    }
+    #fullpage .se1 .container span.on {
+        top: 0;
+        opacity: 1;
+    }
+    #fullpage .se1 .container p {
+        font-size: 30px;
+        font-weight: 500;
+        margin-top: 8px;
+        position: relative;
+        top: 50px;
+        transition: all 1s;
+        opacity: 0;
+    }
+    #fullpage .se1 .container p.on {
+        top: 0;
+        opacity: 1;
+    }
+    
+
+    /* section2 */
+    
+    #fullpage .se2 .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    #fullpage .se2 .container h2 {
+        font-weight: 900;
+        font-size: 40px;
+        margin-left: -50px;
+        transition: all 1s;
+        opacity: 0;
+    }
+    #fullpage .se2 .container h2.on {
+        margin-left: 0;
+        opacity: 1;
+    }
+    #fullpage .se2 .container h2 span {
+        color: #79877a;
+    }
+    #fullpage .se2 .se2_button {
+        text-align: right;
+        margin-right: -50px;
+        opacity: 0;
+        transition: all 1s;
+    }
+    #fullpage .se2 .se2_button.on {
+        opacity: 1;
+        margin-right: 0;
+    }
+    #fullpage .se2 .se2_button button {
+        background: none;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        line-height: 40px;
+        position: relative;
+        border-radius: 100px;
+        padding: 5px 20px 5px 20px;
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 20px -5px;
+        transition: all 0.3s;
+        color: #333;
+    }
+    #fullpage .se2 .se2_button button:hover {
+        transform: scale(1.1);
+    
+    }
+    #fullpage .se2 .se2_button button.on {
+        background: #79877a;
+        color: white;
+    }
+    
+    #fullpage .se2 .se2_button .intro {
+        margin-right: 20px;
+    
+    } 
+    
+    #fullpage .se2  .img_wrap {
+        margin-top: 100px;
+        position: relative;
+        width: 350px;
+        height: 430px;
+        justify-self: center;
+        opacity: 0;
+        transition: all 1s;
+        left: -50px;
+    }
+    #fullpage .se2  .img_wrap.on {
+        opacity: 1;
+        left:0;
+    }
+    #fullpage .se2.active .img_wrap .leaf1{
+        animation: bounce1 .2s 2 alternate;
+        animation-delay: 1s;
+    }
+    #fullpage .se2.active .img_wrap .leaf2{
+        animation: bounce1 .2s 2 alternate;
+        animation-delay: 1s;
+    }
+    #fullpage .se2.active .img_wrap .leaf3{
+        animation: bounce2 .2s 2 alternate;
+        animation-delay: 1s;
+    }
+    #fullpage .se2.active .img_wrap .leaf4{
+        animation: bounce3 .2s 2 alternate;
+        animation-delay: 1s;
+    }
+    
+    #fullpage .se2.active .img_wrap .leaf5{
+        animation: bounce3 .2s 2 alternate;
+        animation-delay: 1s;
+    }
+    
+    @keyframes bounce1 {
+        from {
+            transform:  translate(0px, 0px);
+        }
+        to {
+            transform: translate(10px, -10px);
+        }
+    }
+    @-webkit-keyframes bounce1 {
+        from {
+            transform:  translate(0px, 0px);
+        }
+        to {
+            transform: translate(10px, -10px);
+        }
+    }
+    
+    @keyframes bounce2 {
+        from {
+            transform:  translate(0px, 0px);
+        }
+        to {
+            transform: translate(0px, -10px);
+        }
+    }
+    @-webkit-keyframes bounce2 {
+        from {
+            transform:  translate(0px, 0px);
+        }
+        to {
+            transform: translate(0px, -10px);
+        }
+    }
+    @keyframes bounce3 {
+        from {
+            transform:  translate(0px, 0px);
+        }
+        to {
+            transform: translate(-10px, -10px);
+        }
+    }
+    @-webkit-keyframes bounce3 {
+        from {
+            transform:  translate(0px, 0px);
+        }
+        to {
+            transform: translate(-10px, -10px);
+        }
+    }
+    #fullpage .se2 .img_wrap .pro_img {
+        background: url(../images/pro_img.png) no-repeat;
+        width: 350px;
+        height: 430px;
+        text-indent: -9999px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+    #fullpage .se2 .img_wrap .leaf {
+        position: absolute;
+        text-indent: -9999px;
+        transition: all 0.3s;
+    }
+    #fullpage .se2 .img_wrap .leaf1 {
+        background: url(../images/img_leaf1.png) no-repeat;
+        right: -100px;
+        bottom: 40px;
+        width: 158px;
+        height: 228px;
+    }
+    #fullpage .se2  .img_wrap .leaf2 {
+        background: url(../images/img_leaf2.png) no-repeat;
+        right: -100px;
+        top: 40px;
+        width: 146px;
+        height: 122px;
+    }
+    #fullpage .se2  .img_wrap .leaf3 {
+        background: url(../images/img_leaf3.png) no-repeat;
+        right: 50%;
+        margin-right: -65px;
+        top: -90px;
+        width: 130px;
+        height: 138px;
+    }
+    #fullpage .se2 .img_wrap .leaf4 {
+        background: url(../images/img_leaf4.png) no-repeat;
+        left: -90px;
+        bottom: 50px;
+        width: 154px;
+        height: 200px;
+    }
+    #fullpage .se2 .img_wrap .leaf5 {
+        background: url(../images/img_leaf5.png) no-repeat;
+        left: -90px;
+        top: 30px;
+        width: 152px;
+        height: 198px;
+    }
+    #fullpage .se2 .text_wrap {
+        margin-top: 140px;
+        margin-left: 50px;
+        opacity: 0;
+        transition: all 1s;
+        position: relative;
+        right: -50px;
+
+    }
+    #fullpage .se2 .text_wrap.on {
+        opacity: 1;
+        right: 0;
+    }
+    #fullpage .se2 .text_wrap .text {
+        opacity: 0;
+        transform: translateX(150px);
+        position: absolute;
+    }
+    #fullpage .se2 .text_wrap .text.on {
+        opacity: 1;
+        transform: translateX(0);
+        display: grid;
+        transition: all 1s;
+    }
+    #fullpage .se2 .text_wrap .intro h3 {
+        font-size: 25px;
+        font-weight: bold;
+        line-height: 1.2;
+    }
+    #fullpage .se2 .text_wrap .intro p {
+        font-size: 20px;
+        margin-top: 30px;
+        line-height: 1.2;
+    }
+    #fullpage .se2 .text_wrap .profile {
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+    }
+    #fullpage .se2 .text_wrap .profile .pro_title {
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    #fullpage .se2 .text_wrap .profile ul li {
+        line-height: 25px;
+        font-size: 18px;
+    }
+    #fullpage .se2 .text_wrap .profile .pro_education li {
+        line-height: 1.2;
+        margin-bottom: 13px;
+    }
+    
+    /* section3 */
+
+    #fullpage .se3 .se3_title {
+        opacity: 0;
+        transition: all 1s;
+    }
+    #fullpage .se3 .se3_title.on {
+        opacity: 1;
+    }
+    #fullpage .se3 .se3_title h2 {
+        font-weight: 900;
+        font-size: 40px;
+    }
+    #fullpage .se3 .se3_title h2 span {
+        color: #79877a;
+    }
+    #fullpage .se3 .se3_title p {
+        font-size: 20px;
+        font-weight: 500;
+        margin-top: 5px;
+    }
+    #fullpage .se3 .se3_walk {
+        margin-top: 80px;
+        position: relative;
+        height: 400px;
+    }
+    
+    #fullpage .se3 .se3_walk .se3_macwrap .se3_mac {
+        background:url(../images/daehan_mac.png) no-repeat;
+        width: 800px;
+        height: 412px;
+        margin: 0 auto;
+        z-index: 3;
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        margin-left: -130px;
+        opacity: 0;
+        transition: all 1s;
+    }
+    #fullpage .se3 .se3_walk .se3_macwrap .se3_mac.on {
+        opacity: 1;
+        margin-left: -180px;
+    }
+
+    #fullpage .se3 .se3_walk .se3_padwrap .se3_pad {
+        background:url(../images/daehan_pad.png) no-repeat;
+        width: 427px;
+        height: 393px;
+        margin: 0 auto;
+        z-index:1;
+        position: absolute;
+        left: 260px;
+        bottom: 110px;
+        transition: all 1s;
+        opacity: 0;
+    }
+    #fullpage .se3 .se3_walk .se3_padwrap .se3_pad.on {
+        opacity: 1;
+        bottom: 60px;
+    }
+    #fullpage .se3 .se3_walk .se3_phonewrap .se3_phone {
+        background:url(../images/daehan_phone.png) no-repeat;
+        width: 209px;
+        height: 228px;
+        margin: 0 auto;
+        z-index: 2;
+        position: absolute;
+        left: 210px;
+        bottom:30px;
+        opacity: 0;
+        transition: all 1s;
+    }
+    #fullpage .se3 .se3_walk .se3_phonewrap .se3_phone.on {
+        left: 260px;
+        opacity: 1;
+    }
+    #fullpage .se3 .se3_walk .se3_macwrap .se3_hov a {
+        width: 545px;
+        height: 341px;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 341px;
+        text-align: center;
+        cursor: pointer;
+        opacity: 0;
+        transition: all 0.5s;
+        position: absolute;
+        right: 139px;
+        bottom: 52px;
+        z-index:4;
+    }
+    #fullpage .se3 .se3_walk .se3_padwrap .se3_hov a {
+        width: 258px;
+        height: 343px;
+        background: url(../images/gml_padhov.png) no-repeat;
+        color: white;
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 341px;
+        text-align: center;
+        cursor: pointer;
+        opacity:0;
+        transition: all 0.5s;
+        position: absolute;
+        bottom: 95px;
+        left: 381px;
+        z-index:3;
+    }
+
+    #fullpage .se3 .se3_walk .se3_hov a {
+        display: none;
+    }
+    #fullpage .se3 .se3_walk .se3_hov a.on {
+        display: block;
+    }
+    #fullpage .se3 .se3_walk .se3_phonewrap .se3_hov a {
+        width: 99px;
+        height: 134px;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 1.3;
+        text-align: center;
+        cursor: pointer;
+        opacity: 0;
+        transition: all 0.5s;
+        position: absolute;
+        left: 297px;
+        bottom: 41px;
+        z-index:4;
+        padding-top: 80px;
+        
+    }
+    #fullpage .se3 .se3_walk .se3_phonewrap .se3_hov a:hover {
+        opacity: 1;
+    }
+    #fullpage .se3 .se3_walk .se3_padwrap .se3_hov a:hover {
+        opacity: 1;
+    }
+    #fullpage .se3 .se3_walk .se3_macwrap .se3_hov a:hover {
+        opacity: 1;
+    }
+    
+    
+    
+    
+    #fullpage .se3 .se3_walk .se3_leaf {
+        text-indent: -9999px;
+        background:url(../images/se3_leaf.png) no-repeat;
+        width: 257px;
+        height: 294px;
+        position: absolute;
+        left: 50%;
+        margin-left: -160px;
+        top: -12px;
+        transition: all 1s;
+        opacity: 0;
+    }
+    #fullpage .se3_walk .se3_leaf.on {
+        transform: translate(130px, -160px);
+        opacity: 1;
+    }
+
+
+    
+    
+    
+
+
+
+
+    
+    
+    /* section4 */
+    #fullpage .se4 .se4_title {
+        opacity: 0;
+        transition: all 1s;
+    }
+    #fullpage .se4 .se4_title.on {
+        opacity: 1;
+    }
+    #fullpage .se4 .se4_title h2 {
+        font-weight: 900;
+        font-size: 40px;
+    }
+    #fullpage .se4 .se4_title h2 span {
+        color: #79877a;
+    }
+    #fullpage .se4 .se4_title p {
+        font-size: 20px;
+        font-weight: 500;
+        margin-top: 5px;
+    }
+    #fullpage .se4 .se4_walk {
+        margin-top: 80px;
+        position: relative;
+        height: 430px;
+    }
+    #fullpage .se4 .se4_walk .se4_padwrap .se4_pad {
+        text-indent: -9999px;
+        background:url(../images/grae_pad.png) no-repeat;
+        width: 377px;
+        height: 288px;
+        margin: 0 auto;
+        z-index: 3;
+        position: absolute;
+        right: 20px;
+        top: 140px;
+        opacity: 0;
+        transition: all 1s;
+    }
+    #fullpage .se4 .se4_walk .se4_padwrap .se4_pad.on {
+        opacity: 1;
+        right: 70px;
+    }
+    #fullpage .se4 .se4_walk .se4_padwrap {
+        position: relative;
+        height: 430px;
+    }
+    #fullpage .se4 .se4_walk .se4_padwrap .se4_hov a {
+        width: 350px;
+        height: 262px;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 262px;
+        text-align: center;
+        cursor: pointer;
+        opacity: 0;
+        transition: all 0.5s;
+        position: absolute;
+        right: 84px;
+        bottom: 16px;
+        z-index: 4;
+    }
+    #fullpage .se4 .se4_walk .se4_padwrap .se4_hov a:hover {
+        opacity: 1;
+    }
+    #fullpage .se4 .se4_walk .se4_macwrap .se4_hov a:hover {
+        opacity: 1;
+    }
+    #fullpage .se4 .se4_walk .se4_phonewrap .se4_hov a:hover {
+        opacity: 1;
+    }
+    #fullpage .se4 .se4_walk .se4_macwrap .se4_mac {
+        background:url(../images/grae_mac.png) no-repeat;
+        width: 790px;
+        height: 429px;
+        margin: 0 auto;
+        z-index: 1;
+        position: absolute;
+        left: 50%;
+        margin-left: -410px;
+        opacity: 0;
+        transition: all 1s;
+        top: -50px;
+    }
+    #fullpage .se4 .se4_walk .se4_macwrap .se4_mac.on {
+        top: 0;
+        opacity: 1;
+    }
+    #fullpage .se4 .se4_walk .se4_macwrap .se4_hov a {
+        width: 545px;
+        height: 341px;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 341px;
+        text-align: center;
+        cursor: pointer;
+        opacity: 0;
+        transition: all 0.5s;
+        position: absolute;
+        right: 50%;
+        margin-right: -300px;
+        bottom: 68px;
+        z-index: 2;
+    }
+    #fullpage .se4 .se4_walk .se4_phone {
+        background:url(../images/grae_phone.png) no-repeat;
+        width: 168px;
+        height: 230px;
+        margin: 0 auto;
+        z-index: 1;
+        position: absolute;
+        bottom: 0px;
+        opacity: 0;
+        transition: all 1s;
+        left: 60px;
+    }
+    #fullpage .se4 .se4_walk .se4_phone.on {
+        opacity: 1;
+        left: 110px;
+    }
+    #fullpage .se4 .se4_walk .se4_hov a {
+        display: none;
+    }
+    #fullpage .se4 .se4_walk .se4_hov a.on {
+        display: block;
+    }
+    #fullpage .se4 .se4_walk .se4_phonewrap .se4_hov a {
+        width: 99px;
+        height: 134px;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 1.3;
+        text-align: center;
+        cursor: pointer;
+        opacity: 0;
+        transition: all 0.5s;
+        position: absolute;
+        left: 148px;
+        bottom: 10px;
+        z-index: 2;
+        padding-top: 80px;
+    }
+    
+    
+    #fullpage .se4 .se4_walk .se4_leaf {
+        text-indent: -9999px;
+        background:url(../images/se4_leaf.png) no-repeat;
+        width: 160px;
+        height: 318px;
+        position: absolute;
+        left: 50%;
+        margin-left: -150px;
+        bottom: 60px;
+        transition: all 1s;
+        opacity: 0;
+    }
+    #fullpage .se4 .se4_walk .se4_leaf.on {
+        margin-left: -370px;
+        opacity: 1;
+    }
+    
+
+    /* section5 */
+    #fullpage .se5 .se5_title {
+        opacity: 0;
+        transition: all 1s;
+    }
+    #fullpage .se5 .se5_title.on {
+        opacity: 1;
+    }
+    #fullpage .se5 .se5_title h2 {
+        font-weight: 900;
+        font-size: 40px;
+    }
+    #fullpage .se5 .se5_title h2 span {
+        color: #79877a;
+    }
+    #fullpage .se5 .se5_title p {
+        font-size: 20px;
+        font-weight: 500;
+        margin-top: 5px;
+    }
+    #fullpage .se5 .se5_walk {
+        margin-top: 80px;
+        position: relative;
+        height: 400px;
+    }
+    
+    #fullpage .se5 .se5_walk .se5_macwrap .se5_mac {
+        background:url(../images/gml_mac.png) no-repeat;
+        width: 800px;
+        height: 412px;
+        margin: 0 auto;
+        z-index: 3;
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        margin-left: -130px;
+        opacity: 0;
+        transition: all 1s;
+    }
+    #fullpage .se5 .se5_walk .se5_macwrap .se5_mac.on {
+        opacity: 1;
+        margin-left: -180px;
+    }
+    
+    #fullpage .se5 .se5_walk .se5_padwrap .se5_pad {
+        background:url(../images/gml_pad.png) no-repeat;
+        width: 427px;
+        height: 393px;
+        margin: 0 auto;
+        z-index:1;
+        position: absolute;
+        left: 260px;
+        bottom: 110px;
+        transition: all 1s;
+        opacity: 0;
+    }
+    #fullpage .se5 .se5_walk .se5_padwrap .se5_pad.on {
+        opacity: 1;
+        bottom: 60px;
+    }
+    #fullpage .se5 .se5_walk .se5_phonewrap .se5_phone {
+        background:url(../images/gml_phone.png) no-repeat;
+        width: 209px;
+        height: 228px;
+        margin: 0 auto;
+        z-index: 2;
+        position: absolute;
+        left: 210px;
+        bottom:30px;
+        opacity: 0;
+        transition: all 1s;
+    }
+    #fullpage .se5 .se5_walk .se5_phonewrap .se5_phone.on {
+        left: 260px;
+        opacity: 1;
+    }
+    #fullpage .se5 .se5_walk .se5_macwrap .se5_hov a {
+        width: 545px;
+        height: 341px;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 341px;
+        text-align: center;
+        cursor: pointer;
+        opacity: 0;
+        transition: all 0.5s;
+        position: absolute;
+        right: 139px;
+        bottom: 52px;
+        z-index:4;
+    }
+    #fullpage .se5 .se5_walk .se5_padwrap .se5_hov a {
+        width: 258px;
+        height: 343px;
+        background: url(../images/gml_padhov.png) no-repeat;
+        color: white;
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 341px;
+        text-align: center;
+        cursor: pointer;
+        opacity:0;
+        transition: all 0.5s;
+        position: absolute;
+        bottom: 95px;
+        left: 381px;
+        z-index:3;
+    }
+    #fullpage .se5 .se5_walk .se5_phonewrap .se5_hov a {
+        width: 99px;
+        height: 134px;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 1.3;
+        text-align: center;
+        cursor: pointer;
+        opacity: 0;
+        transition: all 0.5s;
+        position: absolute;
+        left: 297px;
+        bottom: 41px;
+        z-index:4;
+        padding-top: 80px;
+        
+    }
+    #fullpage .se5 .se5_walk .se5_phonewrap .se5_hov a:hover {
+        opacity: 1;
+    }
+    #fullpage .se5 .se5_walk .se5_padwrap .se5_hov a:hover {
+        opacity: 1;
+    }
+    #fullpage .se5 .se5_walk .se5_macwrap .se5_hov a:hover {
+        opacity: 1;
+    }
+    
+    #fullpage .se5 .se5_walk .se5_hov a {
+        display: none;
+    }
+    #fullpage .se5 .se5_walk .se5_hov a.on {
+        display: block;
+    }
+    
+    
+    #fullpage .se5 .se5_walk .se5_leaf {
+        text-indent: -9999px;
+        background:url(../images/se5_leaf.png) no-repeat;
+        width: 257px;
+        height: 294px;
+        position: absolute;
+        left: 50%;
+        margin-left: -160px;
+        top: -12px;
+        transition: all 1s;
+        opacity: 0;
+    }
+    #fullpage .se5 .se5_walk .se5_leaf.on {
+        transform: translate(130px, -160px);
+        opacity: 1;
+    }
+    
+    
+    
+    /* section6 */
+    #fullpage .se6 .container {
+        text-align: center;
+    } 
+    
+    #fullpage .se6 .container h3 {
+        font-weight: 900;
+        font-size: 40px;
+        margin-bottom: 80px;
+        position: relative;
+        top: -50px;
+        opacity: 0;
+        transition: all 1s;
+    }
+    #fullpage .se6 .container h3.on {
+        top: 0;
+        opacity: 1;
+    }
+    #fullpage .se6 .container h3:after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        margin-left: -60px;
+        background: url(../images/se6_leaf.png) no-repeat;
+        width: 120px;
+        height: 117px;
+        z-index: -1;
+        opacity: 0;
+        transition: all 0.8s;
+    }
+    #fullpage .se6.fp-completely .container h3:after { 
+        opacity: 1;
+    }
+    
+    #fullpage .se6 .container p {
+        font-size: 18px;
+        line-height: 1.3;
+        margin-bottom:20px;
+        position: relative;
+        bottom: -50px;
+        opacity: 0;
+        transition: all 1s;
+    }
+    #fullpage .se6 .container p.on {
+        bottom: 0;
+        opacity: 1;
+    }
+
+    /*  대한다원  */
+    
+    #daehan .container {
+        width: 1280px;
+        display: grid;
+        margin: 0 auto;
+        height: 100%;
+        grid-template-columns:  1fr 1fr 1fr; 
+        align-content: center;
+    }
+    
+    /* header */
+    #daehan #header {
+        width: 100%;
+        background: rgba(0, 0, 0, 0.4); 
+        height: 70px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        
+    }
+    #daehan #header .container{
+        grid-template-columns:  130px 1fr 130px; 
+    }
+    #daehan #header .logo {
+        background: url(../images/dae_logo.png) no-repeat;
+        width: 100px;
+        height: 50px;
+        text-indent: -9999px;
+        cursor: pointer;
+        align-self: center;
+    }
+    #daehan #header  .gnb>ul {
+        display: grid;
+        grid-template-columns: 150px 150px 150px 150px;
+        justify-content: center;
+    }
+    
+    #daehan #header  .gnb ul>li {
+        font-family: 'Noto Serif KR', serif;
+        color: white;
+        font-size: 18px;
+        text-align: center;
+        line-height: 50px;
+        position: relative;
+        line-height: 70px;
+    }
+    #daehan #header  .gnb ul>li:hover>.sub_gnb {
+        opacity: 1;
+        transition: all 0.6s;
+    }
+    #daehan #header  .gnb ul li a { color: white}
+    #daehan #header  .gnb ul li .sub_gnb {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: rgba(255, 255, 255, 0.8);
+        width: 150px;
+        opacity: 0;
+    }
+    #daehan #header  .gnb ul li .sub_gnb li a {
+        color: #333;
+        font-size: 16px;
+        font-weight: 500;
+    }
+    #daehan #header  .gnb ul li .sub_gnb li a:hover {
+        color: black;
+        /* font-weight: 700; */
+        
+    }
+    
+    #daehan #header  .header_icon ul {
+        display: grid;
+        grid-template-columns:  1fr 1fr 1fr; 
+        height: 70px;
+        align-content: center;
+    }
+    #daehan #header  .header_icon ul li {
+        text-indent: -9999px;
+        line-height: 50px;
+        cursor: pointer;
+        
+    }
+    #daehan #header  .header_icon ul .search {
+        background: url(../images/search.png) no-repeat center;
+    }
+    #daehan #header  .header_icon ul .people {
+        background: url(../images/people.png) no-repeat center;
+    }
+    #daehan #header  .header_icon ul .cart {
+        background: url(../images/cart.png) no-repeat center;
+    }
+    
+    #daehan #main_slider {
+        width: 100%;
+        height: 900px;
+    }
+    #daehan #main_slider #slider-div  {
+        height: 100%;
+    }
+    #daehan #main_slider .slick-slider .slick-list {
+        height: 100%;
+    }
+    #daehan #main_slider .slick-track{
+        height: 100%;
+    }
+    #daehan #main_slider #slider-div .slick-arrow {
+        position: absolute;
+        top: 50%;
+        width: 40px;
+        height: 40px;
+        background: none;
+        border: none;
+        cursor:pointer;
+        text-indent: -9999px;
+    }
+    #daehan #main_slider #slider-div .slick-next {
+        background: url(../images/main_right.png) no-repeat;
+        right: 320px;
+    }
+    #daehan #main_slider #slider-div .slick-prev {
+        background: url(../images/main_left.png) no-repeat;
+        z-index: 1;
+        left: 320px;
+    }
+    #daehan #main_slider #slider-div .slick-next {
+        background: url(../images/main_right.png) no-repeat;
+    }
+    #daehan #main_slider #slider-div .text_box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -116px;
+        margin-top: -100px;
+        font-size: 24px;
+        color: white;
+        font-family: 'Noto Serif KR', serif;
+        text-align: center;
+    }
+    #daehan #main_slider #slider-div .text_box span {
+        font-size: 60px;
+        line-height: 95px;
+        font-family: 'Noto Serif KR', serif;
+    }
+    #daehan #main_slider #slider-div .slider1{
+        background: url(../images/main_slider1.jpg) no-repeat;
+        height: 100%;
+    }
+    #daehan #main_slider #slider-div .slider2{
+        background: url(../images/main_slider2.jpg) no-repeat;
+        height: 100%;
+    }
+    #daehan #main_slider .slick-dots {
+        position: absolute;
+        bottom: 120px;
+        left: 50%;
+        margin-left: -20px;
+        gap: 10px;
+        z-index: 1;
+        display: grid;
+        grid-template-columns:  1fr 1fr; 
+    }
+    #daehan #main_slider .slick-dots > li {
+        text-indent: -9999px;
+        width: 14px;
+        height: 14px;
+        border-radius: 100%;
+        background: rgba(255, 255, 255, 0.5);
+        transition: all 0.3s;
+    }
+    #daehan #main_slider .slick-dots .slick-active {
+        background: white;
+    }
+    #daehan #section1 {
+        position: relative;
+        top: -100px;
+    }
+    #daehan #section1 .container {
+        background: white;
+        width: 920px;
+        height: 200px;
+        box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.4);
+        grid-template-columns:  1fr 1fr 1fr 1fr;
+        justify-items: center;
+        font-size: 22px;
+        font-family: 'Noto Serif KR', serif;
+    }
+    #daehan #section1 .container > div {
+        height: 200px;
+        width: 100%;
+        text-align: center;
+        position: relative;
+        line-height: 250px;
+        cursor: pointer;
+    }
+    #daehan #section1 .container .load::before {
+        content: '';
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        margin-left: -25px;
+        width: 50px;
+        height: 50px;
+        background: url(../images/icon_load.png) no-repeat;
+        transition: all 0.3s;
+    }
+    #daehan #section1 .container >div:hover:before{
+        top: 40px;
+    }
+    
+    #daehan #section1 .container .map, #daehan #section1 .container .greentea {
+        background: #f7faf3;
+    }
+    #daehan #section1 .container .map::before {
+        content: '';
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        margin-left: -25px;
+        width: 50px;
+        height: 50px;
+        background: url(../images/icon_map.png) no-repeat;
+        transition: all 0.3s;
+    }
+    
+    #daehan #section1 .container .price::before {
+        content: '';
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        margin-left: -25px;
+        width: 50px;
+        height: 50px;
+        background: url(../images/icon_price.png) no-repeat;
+        transition: all 0.3s;
+    }
+    
+    #daehan #section1 .container .greentea::before {
+        content: '';
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        margin-left: -25px;
+        width: 50px;
+        height: 50px;
+        background: url(../images/icon_greentea.png) no-repeat;
+        transition: all 0.3s;
+    }
+    
+    #daehan #section2 .container {
+        grid-template-columns: 460px 460px 1fr;
+        gap: 20px;
+        }
+    #daehan #section2 .container .gallery, #daehan #section2 .container .story {
+            grid-row-end: span 2;
+        }
+    #daehan #section2 .container .story .section2_img {
+        width: 460px;
+        height: 320px;
+        background: url(../images/section1_1.jpg) no-repeat;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+    #daehan #section2 .container .gallery .section2_img {
+        width: 460px;
+        height: 320px;
+        background: url(../images/section1_2.jpg) no-repeat;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+    #daehan #section2 .container .info {
+        grid-column-end: 4;
+    }
+    #daehan #section2 .container > div > span {
+        font-size: 18px;
+        font-weight: bold;
+        font-family: 'Noto Serif KR', serif;
+    }
+    #daehan #section2 .container > div > ul {
+        margin-top: 20px;
+    }
+    #daehan #section2 .container > div > button {
+        text-indent: 0;
+        width: 50px;
+        height: 20px;
+        background: #9cbd74;
+        border-radius: 100px;
+        border: none;
+        cursor: pointer;
+        color: white;
+        line-height: 0px;
+        float: right;
+    }
+    #daehan #section2 .container > div > ul > li  {
+        font-size: 14px;
+        padding-left: 20px;
+        line-height: 25px;
+        position: relative;
+    }
+    #daehan #section2 .container > div > ul > li::before {
+        content: '';
+        position: absolute;
+        left: 3px;
+        top: 10px;
+        width: 5px;
+        height: 5px;
+        border-radius: 100px;
+        background: #9cbd74;
+    }
+    
+    
+    #daehan #section3 {
+        margin-top: 120px;
+        margin-bottom: 180px;
+    }
+    #daehan #section3 .container {
+        display: block;
+    
+    }
+    #daehan #section3 .container h3 {
+        font-size: 18px;
+        font-weight: bold;
+        font-family: 'Noto Serif KR', serif;
+    }
+    #daehan #section3 .container .gift_list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 20px;
+        margin-top: 20px;
+    }
+    #daehan #section3 .container .gift_list span {
+        font-size: 16px;
+    }
+    #daehan #section3 .container .gift_list p {
+        font-size: 20px;
+        font-weight: 500;
+        margin-top: 10px;
+    }
+    #daehan #section3 .container .gift_list .gift_img {
+        width: 305px;
+        height: 305px;
+        cursor: pointer;
+        margin-bottom: 20px;
+        transition: all 0.3s;
+        overflow: hidden;
+    
+    }
+    #daehan #section3 .container .gift_list .gift_img:hover {
+        transform: scale(1.05);
+    }
+    #daehan #section3 .container .gift_list .gift1 .gift_img {
+        background: url(../images/gift1.jpg) no-repeat;
+    }
+    #daehan #section3 .container .gift_list .gift2 .gift_img {
+        background: url(../images/gift2.jpg) no-repeat;
+    }
+    #daehan #section3 .container .gift_list .gift3 .gift_img {
+        background: url(../images/gift3.jpg) no-repeat;
+    }
+    #daehan #section3 .container .gift_list .gift4 .gift_img {
+        background: url(../images/gift4.jpg) no-repeat;
+    }
+    
+    #footer {
+        background: #444;
+        height: 140px;
+    }
+    #footer .container {
+       grid-template-columns: 180px 1fr;
+    }
+    
+    #footer .container h2 {
+        text-indent: -9999px;
+        background: url(../images/dae_logo.png) no-repeat;
+        cursor:pointer;
+        grid-row: 1 / span 2;
+        align-items:center;
+        background-position: 0 50%;
+    
+    }
+    #footer .container p {
+        grid-column:2;
+    }
+    #footer .container ul {
+        display: grid;
+        grid-template-columns: 140px 140px 140px 140px 140px;
+        margin-bottom: 20px;
+        
+    }
+    #footer .container ul li a{
+        color: white;
+        font-size: 14px;
+    }
+    #footer .container p {
+        font-size: 12px;
+        color: white;
+        line-height: 16px;
+    }
+
+
+
+/* tablet */
+@media all  and (max-width:1280px){
+    #fullpage .section .container {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    #fp-nav {
+        display: none;
+    }
+    #fullpage .se1 .container h3 {
+        font-size: 35px;
+        margin-bottom: 70px;
+    }
+    #fullpage .se1 .container h3:after {
+        bottom: -37px;
+    }
+    #fullpage .se1 .container span {
+        font-size: 16px;
+    }
+    #fullpage .se1 .container p {
+        font-size: 25px;
+    }
+
+    #fullpage .se1 a span {
+        position: absolute;
+        bottom: 160px;
+        left: 50%;
+        width: 24px;
+        height: 24px;
+        margin-left: -12px;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        -webkit-animation: sdb05 1.5s infinite;
+        animation: sdb05 1.5s infinite;
+        box-sizing: border-box;
+        border: none;
+        border-left: 2px solid #657967;
+        border-bottom: 2px solid #657967;
+        border-radius: 0;
+        opacity: 0;
+        transition: all 1s;
+      }
+      #fullpage .se1 a span.on {
+          opacity: 1;
+      }
+      #fullpage .se1 a span::before {
+          display: none;
+      }
+      @-webkit-keyframes sdb05 {
+        0% {
+          -webkit-transform: rotate(-45deg) translate(0, 0);
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          -webkit-transform: rotate(-45deg) translate(-20px, 20px);
+          opacity: 0;
+        }
+      }
+      @keyframes sdb05 {
+        0% {
+          transform: rotate(-45deg) translate(0, 0);
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          transform: rotate(-45deg) translate(-20px, 20px);
+          opacity: 0;
+        }
+      }
+
+
+
+
+
+    #fullpage .se2 .container h2 {
+        padding-left: 80px;
+        font-size: 35px;
+    }
+    #fullpage .se2 .se2_button {
+        padding-right: 80px;
+    }
+    #fullpage .se2 .se2_button button {
+        font-size: 16px;
+    }
+    #fullpage .se2 .text_wrap {
+        margin-top: 110px;
+        margin-left: 0px;
+    }
+    #fullpage .se2 .text_wrap .intro h3 {
+        font-size: 22px;
+    }
+    #fullpage .se2 .text_wrap .intro p {
+        font-size: 18px;
+        line-height: 1.3;
+    }
+    #fullpage .se2 .text_wrap .text {
+        padding-right: 50px;
+    }
+    #fullpage .se2 .img_wrap {
+        width: 300px;
+        height: 370px;
+    }
+    #fullpage .se2 .img_wrap .pro_img {
+        width: 300px;
+        height: 370px;
+        background-size: 100%;
+    }
+    #fullpage .se2 .img_wrap .leaf {
+        background-size: 80%;
+    }
+    #fullpage .se2 .img_wrap .leaf1 {
+        bottom: 5px;
+    }
+
+    #fullpage .se2 .img_wrap .leaf3 {
+        margin-right: -85px;
+        top: -76px;
+    }
+    #fullpage .se2 .img_wrap .leaf4 {
+        left: -70px;
+        bottom: 25px;
+    }
+    #fullpage .se2 .img_wrap .leaf5 {
+        left: -65px;
+        top: 35px;
+    }
+
+
+
+
+    
+    #fullpage .se3 .se3_title {
+        text-align: center;
+
+    }
+    #fullpage .se3 .se3_title h2 {
+        font-size: 35px;
+    }
+    #fullpage .se3 .se3_title p {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+    #fullpage .se3 .se3_walk {
+        margin-top: 140px;
+        top: -70px;
+    }
+    #fullpage .se3 .se3_walk .se3_macwrap .se3_mac {
+        width: 710px;
+        height: 319px;
+        margin-left: -255px;
+        background-size: 100%;
+        background: url(../images/daehan_tb.png) no-repeat;
+    }
+    #fullpage .se3 .se3_walk .se3_macwrap .se3_mac.on {
+        margin-left: -355px;
+    }
+    #fullpage .se3 .se3_walk .se3_macwrap .se3_hov a {
+        text-indent: -9999px;
+        background: none;
+        width: 710px;
+        height: 319px;
+        right: 50%;
+        margin-right: -355px;
+        bottom: 0;
+    }
+    #fullpage .se3 .se3_walk .se3_macwrap .se3_hov {
+        display: block;
+    }
+    #fullpage .se3 .se3_walk .se3_padwrap {
+        display: none;
+    }
+    #fullpage .se3 .se3_walk .se3_phonewrap {
+        display: none;
+    }
+    #fullpage .se3 .se3_walk .se3_hov {
+        display: none;
+    }
+    #fullpage .se3 .se3_walk .se3_leaf {
+        width: 160px;
+        height: 182px;
+        background-size: 100%;
+        top: auto;
+        bottom: -55px;
+        margin-left: -370px;
+    }
+    #fullpage .se3 .se3_walk .se3_leaf.on {
+        transform: translate(220px, -275px);
+    }
+    #fullpage .se3 .se3_walk .se3_macwrap::before {
+        content: '이미지를 클릭하면 웹사이트로 이동합니다 :)';
+        font-size: 14px;
+        position: absolute;
+        top: 115px;
+        right: 50%;
+        transition: all 0.8s;
+        opacity: 0;
+        margin-right: -276px;
+    }
+    #fullpage .se3.fp-completely .se3_walk .se3_macwrap::before {
+        opacity: 1;
+        top: 87px;
+    } 
+
+
+    #fullpage .se4 .se4_title {
+        text-align: center;
+
+    }
+    #fullpage .se4 .se4_title h2 {
+        font-size: 35px;
+    }
+    #fullpage .se4 .se4_title p {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+    #fullpage .se4 .se4_walk {
+        margin-top: 140px;
+    }
+    #fullpage .se4 .se4_walk .se4_macwrap .se4_mac {
+        width: 767px;
+        height: 303px;
+        margin-left: -383px;
+        background-size: 100%;
+        background: url(../images/grae_tb.png) no-repeat;
+    }
+    #fullpage .se4 .se4_walk .se4_padwrap {
+        display: none;
+    }
+    #fullpage .se4 .se4_walk .se4_phonewrap {
+        display: none;
+    }
+    #fullpage .se4 .se4_walk .se4_hov {
+        display: none;
+    }
+    #fullpage .se4 .se4_walk .se4_macwrap .se4_hov {
+        display: block;
+    }
+    #fullpage .se4 .se4_walk .se4_macwrap .se4_hov a {
+        opacity: 0;
+        width: 767px;
+        height: 303px;
+        margin-right: -390px;
+        bottom: 130px;
+        background: none;
+        text-indent: -9999px;
+    }
+    #fullpage .se4 .se4_walk .se4_leaf {
+        width: 124px;
+        height: 245px;
+        background-size: 100%;
+        bottom: auto;
+        top: 0;
+    }
+    #fullpage .se4.fp-completely .se4_walk .se4_leaf {
+        margin-left: -320px;
+    }
+    #fullpage .se4.fp-completely .se4_walk .se4_macwrap::before {
+        top: -25px;
+        opacity: 1;
+    }
+    #fullpage .se4 .se4_walk .se4_macwrap::before {
+        content: '이미지를 클릭하면 웹사이트로 이동합니다 :)';
+        font-size: 14px;
+        position: absolute;
+        top: 0;
+        right: 50%;
+        transition: all 0.8s;
+        opacity: 0;
+        margin-right: -128px;
+        }
+
+
+
+
+
+        #fullpage .se5 .se5_title {
+            text-align: center;
+    
+        }
+        #fullpage .se5 .se5_title h2 {
+            font-size: 35px;
+        }
+        #fullpage .se5 .se5_title p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        #fullpage .se5 .se5_walk {
+            margin-top: 140px;
+            top: -70px;
+        }
+        #fullpage .se5 .se5_walk .se5_macwrap .se5_mac {
+            width: 710px;
+            height: 319px;
+            margin-left: -255px;
+            background-size: 100%;
+            background: url(../images/gml_tb.png) no-repeat;
+        }
+        #fullpage .se5 .se5_walk .se5_macwrap .se5_hov a {
+            text-indent: -9999px;
+            background: none;
+            width: 710px;
+            height: 319px;
+            right: 50%;
+            margin-right: -355px;
+            bottom: 0;
+        }
+        #fullpage .se5 .se5_walk .se5_macwrap .se5_hov {
+            display: block;
+        }
+        #fullpage .se5 .se5_walk .se5_padwrap {
+            display: none;
+        }
+        #fullpage .se5 .se5_walk .se5_phonewrap {
+            display: none;
+        }
+        #fullpage .se5 .se5_walk .se5_hov {
+            display: none;
+        }
+        #fullpage .se5 .se5_walk .se5_leaf {
+            width: 160px;
+            height: 182px;
+            background-size: 100%;
+            top: auto;
+            bottom: 65px;
+        }
+        #fullpage .se5.fp-completely .se5_walk .se5_leaf {
+            transform: translate(75px, -148px);
+        }
+        #fullpage .se5 .se5_walk .se5_macwrap::before {
+            content: '이미지를 클릭하면 웹사이트로 이동합니다 :)';
+            font-size: 14px;
+            position: absolute;
+            top: 115px;
+            right: 50%;
+            transition: all 0.8s;
+            opacity: 0;
+            margin-right: -276px;
+        }
+        #fullpage .se5.fp-completely .se5_walk .se5_macwrap::before {
+            opacity: 1;
+            top: 87px;
+        } 
+        #fullpage .se5 .se5_walk .se5_macwrap .se5_mac.on {
+            margin-left: -355px;
+        }
+
+        #fullpage .se6 .container h3 {
+            font-size: 35px;
+        }
+        #fullpage .se6 .container p {
+            font-size: 16px;
+        }
+
+
+         /* 대한다원 tablet */
+
+         #daehan .container {
+             width: 100%;
+         }
+         #daehan #header .container {
+             grid-template-columns: 1fr 1fr;
+             padding: 0 50px;
+             width: auto;
+         }
+
+         #daehan #header .container  .gnb {
+             display: none;
+         }
+         #daehan #header .header_icon ul {
+            grid-template-columns: auto;
+            height: 50px;
+            gap: 10px;
+            cursor: pointer;
+            justify-content: end;
+         }
+         #daehan #header .header_icon ul li {
+             line-height:normal;
+         }
+         #daehan #header .header_icon ul .search,
+         #daehan #header .header_icon ul .people,
+         #daehan #header .header_icon ul .cart {
+             background: white;
+             width: 40px;
+             height: 2px;
+         }
+
+         #daehan #main_slider #slider-div .slick-arrow {
+             display: none;
+         }
+
+
+         #daehan #section1 .container {
+             width: 768px;
+         }
+         #daehan #section2 {
+             padding: 0 50px;
+         }
+         #daehan #section2 .container {
+             grid-template-columns: 1fr 1fr;
+         }
+         #daehan #section2 .container .gallery, #daehan #section2 .container .story {
+            grid-row-end:auto;
+         }
+         #daehan #section2 .container .info {
+            grid-column-end: auto;
+            order: 4;
+         }
+         #daehan #section2 .container .gallery {
+             order: 3;
+         }
+         #daehan #section3 .container h3 {
+             text-align: center;
+             margin-bottom: 50px
+         }
+         #daehan #section3 .container .gift_list {
+             grid-template-columns: 1fr 1fr;
+         }
+         #daehan #section3 .container .gift_list > div {
+            justify-self: center;
+         }
+         #daehan #footer .container {
+            grid-template-columns: auto;
+         }
+         #daehan #footer .container ul {
+             justify-self: center;
+         }
+         #daehan #footer .container h2 {
+           display: none;
+         }
+         #daehan  #footer .container p {
+            grid-column: auto;
+            justify-self: center;
+            text-align: center;
+         }
+
+    }
+    @media all and (max-width:768px) {
+        .mobi_none {
+            display: none;
+        }
+        #fullpage .se1 .container .logo {
+            background: url(../images/logo_mobi.png) no-repeat;
+            width: 160px;
+            background-size: 160px;
+            height: 160px;
+        }
+        #fullpage .se1 .container h3 {
+            font-size: 25px;
+            margin-bottom: 50px;
+        }
+        #fullpage .se1 .container h3:after {
+            bottom: -27px;
+            margin-left: -16px;
+            width: 32px;
+            height: 2px;
+        }
+        #fullpage .se1 .container span {
+            font-size: 14px;
+        }
+        #fullpage .se1 .container p {
+            font-size: 20px;
+        }
+
+
+        #fullpage .se2 .container {
+            grid-template-columns: 1fr;
+        }
+        #fullpage .se2 .container h2 {
+            margin-left: 0;
+            text-align: center;
+            padding-left:0;
+            font-size: 24px;
+        }
+        #fullpage .se2 .se2_button {
+            padding-right: 0;
+            text-align: center;
+            padding-top: 30px;
+        }
+        #fullpage .se2 .se2_button button {
+            font-size: 14px;
+            line-height: 30px;
+        }
+        #fullpage .se2 .img_wrap {
+            margin-top: 0;
+            width: 195px;
+            height: 241px;
+            margin-top: 40px;
+        }
+        #fullpage .se2 .text_wrap {
+            margin-top: 0;
+            width: 100%;
+            height: 220px;
+        }
+        #fullpage .se2 .img_wrap .pro_img {
+            width: 195px;
+            height: 241px;
+            background: url(../images/pro_img_mobi.png) no-repeat;
+            background-size: 195px;
+        }
+        #fullpage .se2 .img_wrap .leaf1 {
+            background-image: url(../images/img_leaf1_mobi.png);
+            background-size: 87px;
+            width: 87px;
+            height: 122px;
+            right: -40px;
+        }
+        #fullpage .se2 .img_wrap .leaf2 {
+            background-image: url(../images/img_leaf2_mobi.png);
+            background-size: 70px;
+            width: 70px;
+            height: 96px;
+            right: -35px;
+            top: 15px;
+        }
+        #fullpage .se2 .img_wrap .leaf3 {
+            background-image: url(../images/img_leaf3_mobi.png);
+            background-size: 79px;
+            width: 79px;
+            height: 85px;
+            margin-right: -47px;
+            top: -45px;
+        }
+        #fullpage .se2 .img_wrap .leaf4 {
+            background-image: url(../images/img_leaf4_mobi.png);
+            background-size: 87px;
+            width: 87px;
+            height: 119px;
+            left: -35px;
+        }
+        #fullpage .se2 .img_wrap .leaf5 {
+            background-image: url(../images/img_leaf5_mobi.png);
+            background-size: 87px;
+            width: 87px;
+            height: 122px;
+            left: -35px;
+            top: 17px;
+        }
+        #fullpage .se2 .text_wrap {
+            margin: 10px 0 10px 0;
+        }
+        #fullpage .se2 .text_wrap .text {
+            text-align: center;
+            padding-right: 0;
+            width: 100%;
+        }
+        #fullpage .se2 .text_wrap .profile {
+            gap: 0;
+            row-gap: 20px;
+        }
+        #fullpage .se2 .text_wrap .intro h3 {
+            font-size: 18px;
+        }
+        #fullpage .se2 .text_wrap .intro p {
+            font-size: 14px;
+            margin-top: 15px;
+            padding: 0 35px;
+        }
+        #fullpage .se2 .text_wrap .profile .pro_title {
+            font-size: 18px;
+        }
+        #fullpage .se2 .text_wrap .profile ul li {
+            font-size: 14px;
+            line-height: 1.3;
+        }
+
+
+        #fullpage .se3 .se3_title {
+            margin-top: -40px;
+        }
+        #fullpage .se3 .se3_title h2 {
+            font-size: 24px;
+        }
+        #fullpage .se3 .se3_title p {
+            font-size: 16px;
+        }
+        #fullpage .se3 .se3_walk {
+            top:0;
+        }
+        #fullpage .se3 .se3_walk .se3_macwrap .se3_mac {
+            background: url(../images/daehan_phone_mobi.png) no-repeat;
+            width: 220px;
+            height: 441px;
+            background-size: 220px;
+            margin-left: -190px;
+            bottom: auto;
+        }
+        #fullpage .se3 .se3_walk .se3_macwrap .se3_mac.on {
+            margin-left: -110px;
+        }
+
+
+
+        #fullpage .se3 .se3_walk .se3_macwrap .se3_hov a {
+            width: 220px;
+            height: 441px;
+            margin-right: -110px;
+            bottom: -35px;
+        }
+        
+        #fullpage .se3 .se3_walk .se3_macwrap::before {
+            font-size: 12px;
+            margin-right: -110px;
+            top: 0;
+        }
+        #fullpage .se3.fp-completely .se3_walk .se3_macwrap::before{
+            top: -25px;
+        }
+        #fullpage .se3 .se3_walk .se3_leaf {
+            left: auto;
+            right: 50%;
+            margin-right: -105px;
+            margin-left: 0;
+            background: url(../images/img_leaf3_mobi.png) no-repeat;
+            width: 136px;
+            height: 143px;
+            background-size: 136px;
+            bottom: 35px;
+        }
+        #fullpage .se3.fp-completely .se3_walk .se3_leaf {
+            transform: translate(85px, -148px);
+        }
+
+        #fullpage .se4 .se4_walk .se4_macwrap .se4_hov a {
+            width: 220px;
+            height: 442px;
+            margin-right: -111px;
+            bottom: 0;
+        }
+        #fullpage .se4 .se4_walk .se4_macwrap .se4_mac {
+            background: url(../images/grae_phone_mobi.png) no-repeat;
+            width: 220px;
+            height: 442px;
+            background-size: 220px;
+            margin-left: -110px;
+        }
+        #fullpage .se4 .se4_title {
+            margin-top: -40px;
+        }
+
+        #fullpage .se4 .se4_title h2 {
+            font-size: 24px;
+        }
+        #fullpage .se4 .se4_title p {
+            font-size: 16px;
+        }
+        #fullpage .se4 .se4_walk .se4_macwrap::before {
+            font-size: 12px;
+            margin-right: -110px;
+        }
+        #fullpage .se4 .se4_walk .se4_leaf {
+            width: 80px;
+            height: 159px;
+            background-size: 80px;
+            top: 90px;
+            margin-left: -100px;
+        }
+        #fullpage .se4.fp-completely .se4_walk .se4_leaf {
+            margin-left: -170px;
+        }
+
+
+
+
+        #fullpage .se5 .se5_title {
+            margin-top: -40px;
+        }
+        #fullpage .se5 .se5_title h2 {
+            font-size: 24px;
+        }
+        #fullpage .se5 .se5_title p {
+            font-size: 16px;
+        }
+        #fullpage .se5 .se5_walk {
+            top:0;
+        }
+        #fullpage .se5 .se5_walk .se5_macwrap .se5_mac {
+            background: url(../images/gml_phone_mobi.png) no-repeat;
+            width: 220px;
+            height: 441px;
+            background-size: 220px;
+            margin-left: -190px;
+            bottom: auto;
+        }
+        #fullpage .se5 .se5_walk .se5_macwrap .se5_mac.on {
+            margin-left: -110px;
+        }
+        #fullpage .se5 .se5_walk .se5_macwrap .se5_hov a {
+            width: 220px;
+            height: 441px;
+            margin-right: -110px;
+            bottom: -35px;
+        }
+        
+        #fullpage .se5 .se5_walk .se5_macwrap::before {
+            font-size: 12px;
+            margin-right: -110px;
+            top: 0;
+        }
+        #fullpage .se5.fp-completely .se5_walk .se5_macwrap::before{
+            top: -25px;
+        }
+        #fullpage .se5 .se5_walk .se5_leaf {
+            left: auto;
+            right: 50%;
+            margin-right: -105px;
+            margin-left: 0;
+            background: url(../images/img_leaf1_mobi.png) no-repeat;
+            width: 136px;
+            height: 143px;
+            background-size: 136px;
+            bottom: 35px;
+        }
+        #fullpage .se6 .container h3 {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+        #fullpage .se6 .container h3:after {
+            background: url(../images/se6_leaf_mobi.png) no-repeat;
+            width: 80px;
+            background-size: 80px;
+            height: 77px;
+            margin-left: -40px;
+        }
+
+
+        #fullpage .se6 .container p { 
+            font-size: 15px;
+        }
+
+
+
+        /* 대한다원 모바일 */
+        #daehan #section1 .container {
+            width: calc(100% - 40px);
+            margin: 0 auto;
+            height: 260px;
+        }
+        #daehan #header .container {
+            padding: 0 20px;
+        }
+        #daehan #section1 .container > div {
+            height: 130px;
+            line-height: 180px;
+            font-size: 16px;
+        }
+        #daehan #section1 .container {
+            grid-template-columns: 1fr 1fr;
+        }
+        #daehan #section1 .container > div {
+            background: white;
+        }
+        #daehan #section1 .container .load::before,
+        #daehan #section1 .container .price::before,
+        #daehan #section1 .container .map::before,
+        #daehan #section1 .container .greentea::before {
+            top: 20px;
+        }
+        
+        #daehan #section1 .container .price {
+            background: #f7faf3;
+
+        }
+        #daehan #section1 .container .greentea {
+            background: white;
+        }
+        #daehan #section2 .container {
+            grid-template-columns: 1fr;
+        }
+        #daehan #section2 .container .gallery {
+            order: inherit;
+        }
+        #daehan #section3 .container .gift_list {
+            grid-template-columns: 1fr;
+        }
+        #daehan #section3 .container .gift_list > div {
+            margin-bottom: 50px;
+        }
+        #daehan #section2 {
+            padding: 0 20px;
+        }
+        #daehan #section2 .container .story .section2_img,
+        #daehan #section2 .container .gallery .section2_img {
+            width: 100%;
+            background-size: 100%;
+            height: 55vw;
+        }
+        #footer .container ul {
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
+        #daehan #footer  {
+            height: 240px;
+        }
+        #footer .container ul li {
+            text-align: center;
+            
+        }
+        #footer .container ul li a {
+            font-size: 12px;
+        }
+        #daehan #footer .container p {
+            padding: 0 20px;
+        }
+        #daehan #section3 {
+            margin-bottom: 80px;
+        }
+    }
+
+
