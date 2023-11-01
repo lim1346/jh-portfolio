@@ -7,12 +7,17 @@
     <title>Hi</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
     <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;500;600;700&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/common.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+    <script src="https://kit.fontawesome.com/bd4e63e095.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="on">
@@ -37,7 +42,10 @@
                 <div class="section-parallax parallax-00"></div>
                 <div class="section-parallax parallax-01"></div>
                 <div class="text_wrap">
-                    <p class="parallax-fade-top">PORTFOLIO</p>
+                    <img src="images/logo.png" alt="로고" class="main_logo" />
+                    <p class="main_title">PORTFOLIO</p>
+                    <p class="port_name">Web Publisher<br />
+                        <span>Lim JaeHyung</span> </p>
                 </div>
             </div>
         </section>
@@ -46,69 +54,193 @@
         <section id="section1" class="first_section">
             <div class="profile_img">
                 <div class="pro_img">증명사진</div>
+                <div class="leaf_1 on"></div>
+                <div class="leaf_2"></div>
+                <div class="leaf_3"></div>
+                <div class="leaf_4"></div>
             </div>
-            <div class="tab_wrap">
-                <div class="tab_line">
-                    <div class="light-ray"></div>
-                </div>
-                <div class="tab_ul">
-                    <div class="tab_menu1">Intro</div>
-                    <div class="tab_menu2">Profile</div>
-                    <div class="tab_menu3">Skill</div>
-                    <div class="tab_menu4">Career</div>
-                </div>
-                <div class="tab_body">
-                    <div class="tab_body_1 on">
-                        <h3>" 반갑습니다.<br>
-                            발전하는 게 즐거운<br>
-                            웹퍼블리셔 임재형입니다. "
-                        </h3>
-                        <p>
-                            무엇이든 배우며 발전하는 것이 좋고 즐겁습니다.<br>
-                            좋아하는 일을 즐기며 좀 더 성장해 나가는 사람이 되고 싶습니다.
-                        </p>
-                        <p>
-                            시각디자인을 전공하면서 얻은 다양한 표현력과<br>
-                            반응형 웹퍼블리싱 경험을 바탕으로<br>
-                            창의력으로 트랜디하고 실용적인 웹디자인을 구성할 수 있습니다.
-                        </p>
+            <div class="padding">
+                <div class="tab_wrap">
+                    <div class="tab_line">
+                        <div class="light-ray"></div>
                     </div>
-                    <div class="tab_body_2">
-                        <p>임재형</p>
-                        <p>1993 . 10 . 02</p>
-                        <p>010 . 2598 . 4186</p>
-                        <p>lim1346@naver.com</p>
-                        <p>백석 예술대학교 시각디자인과 졸업</p>
-                        <p>더조은 컴퓨터 아트학원 웹 퍼블리셔 UI UX 프론트엔드 양성과정 수료</p>
+                    <div class="tab_ul">
+                        <div class="tab_menu1">Intro</div>
+                        <div class="tab_menu2">Profile</div>
+                        <div class="tab_menu3">Career</div>
+                        <div class="tab_menu4">Skill</div>
                     </div>
-                    <div class="tab_body_3">
-                        <p>지금까지는 단순히 컴파일만해서 결과값을 콘솔창에 출력받았습니다.
-                            컴파일된 파일로 추출하기 위해선 옵션을 추가해줍니다.</p>
-                    </div>
-                    <div class="tab_body_4">
-                        <p>Cooper Perkins combines enlightened engineering with years of<br>
-                            substantive experience to solve our partners’ most challenging<br>
-                            business problems.</p>
+                    <div class="tab_body">
+                        <div class="tab_body_1 on">
+                            <h3><span class="green_text">"</span> 반갑습니다.<br>
+                                발전하는 게 즐거운<br>
+                                웹퍼블리셔 임재형입니다. <span class="green_text">"</span>
+                            </h3>
+                            <p>
+                                무엇이든 배우며 발전하는 것이 좋고 즐겁습니다.<br>
+                                좋아하는 일을 즐기며 좀 더 성장해 나가는 사람이 되고 싶습니다.
+                            </p>
+                            <p>
+                                시각디자인을 전공하면서 얻은 다양한 표현력과<br>
+                                반응형 웹퍼블리싱 경험을 바탕으로
+                                창의력으로 트랜디하고 실용적인 웹디자인을 구성할 수 있습니다.
+                            </p>
+                        </div>
+                        <div class="tab_body_2">
+                            <span class="left_text">
+                                <p>Name.</p>
+                                <p>Date of birth.</p>
+                                <p>Tell.</p>
+                                <p>E-mail.</p>
+                                <p>Education.</p>
+                            </span>
+                            <span class="right_text">
+                                <p>임재형</p>
+                                <p>1993.10.02</p>
+                                <p>010.2598.4186</p>
+                                <p>lim1346@naver.com</p>
+                                <p>백석 예술대학교 시각디자인과 졸업</p>
+                                <p>더조은 컴퓨터 아트학원 웹 퍼블리셔<br /> UI UX 프론트엔드 양성과정 수료</p>
+                            </span>
+                        </div>
+                        <div class="tab_body_3">
+                            <span class="left_text">
+                                <p class="mg_b">Experience.</p>
+                                <p>License.</p>
+                            </span>
+                            <span class="right_text">
+                                <p><span>2017.03 - 2019.02</span> 해피피플 주식회사 디자인 <br />
+                                <span>2020.12 - 2021.10</span> GRAE코퍼레이션 웹퍼블리싱 <br />
+                                <span>2022.05 - 2023.07</span> GMC-labs 웹퍼블리싱</p>
+                                <p>웹디자인 기능사 <br />
+                                GTQ 포토샵 1급 <br />
+                                1종보통 운전면허</p>
+                            </span>
+                        </div>
+                        <div class="tab_body_4">
+                            <ul class="skill_img">
+                                <li><img src="images/icon_pt.png" alt="포토샵" /></li>
+                                <li><img src="images/icon_il.png" alt="일러스트" /></li>
+                                <li><img src="images/icon_fg.png" alt="피그마" /></li>
+                                <li><img src="images/icon_html.png" alt="html" /></li>
+                                <li><img src="images/icon_css.png" alt="css" /></li>
+                                <li><img src="images/icon_js.png" alt="js" /></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
         <section id="section2" class="second_section">
-            <div class="serction2_wrap">
-
+            <h3 class="section_title" data-aos="fade-up" data-aos-duration="1000">Project<span class="dot">.</span></h3>
+            <div class="serction_wrap flex">
+                <div>
+                    <div class="moimg_wrap mobi_1" data-aos="fade-up" data-aos-duration="1000">
+                    </div>
+                    <h4 class="project_title" data-aos="fade-up" data-aos-duration="1000"><span class="title_num">01.</span> 맥딜리버리 앱 리디자인</h4>
+                    <div class="work_text">
+                        <p data-aos="fade-up" data-aos-duration="1000">맥도날드를 좋아해서 자주 맥딜리버리 앱을 사용해 배달시켜 먹곤 하는데요,
+                            기존의 맥딜리버리 앱은 조금 조잡하고 올드 한 디자인이라고 생각이 들었습니다.<br />
+                            제가 직접 사용하면서 느꼈던 단점을 저만의 방식으로 좀 더 깔끔하고 심플하게 리디자인 해보았습니다.
+                        </p>
+                        <button type="button" class="view_btn" data-aos="fade-up" data-aos-duration="1000">View <i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                <img src="images/mac_img.png" alt="맥도날드" class="work_img" data-aos="fade-up" data-aos-duration="1000"/>
+            </div>
+            <div class="serction_wrap serction2_wrap flex">
+                <div>
+                    <div class="moimg_wrap mobi_2" data-aos="fade-up" data-aos-duration="1000">
+                    </div>
+                    <h4 class="project_title" data-aos="fade-up" data-aos-duration="1000"><span class="title_num">02.</span> GML 기업 반응형 홈페이지</h4>
+                    <div class="work_text">
+                        <p data-aos="fade-up" data-aos-duration="1000">
+                            처음 퍼블리셔로 회사에서 근무하면서 작업했던 기업 홈페이지입니다.
+                            풀페이지 스크립트를 사용해서 시원시원한 화면감과 푸른색을 메인 칼라로 사용해 기업의 이미지와 맞게 디자인해봤습니다.
+                        </p>
+                        <button type="button" class="view_btn" data-aos="fade-up" data-aos-duration="1000">View <i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                <img src="images/gml_img.png" alt="gml" class="work_img" data-aos="fade-up" data-aos-duration="1000"/>
+            </div>
+            <div class="serction_wrap serction3_wrap flex">
+                <div>
+                    <div class="moimg_wrap mobi_3" data-aos="fade-up" data-aos-duration="1000">
+                    </div>
+                    <h4 class="project_title" data-aos="fade-up" data-aos-duration="1000"><span class="title_num">03.</span> 그래코퍼레이션 기업소개 반응형 페이지</h4>
+                    <div class="work_text">
+                        <p data-aos="fade-up" data-aos-duration="1000">
+                            자칫하면 딱딱해 보일 수 있는 기업 소개 홈페이지를 역동적인 애니메이션과 부드러운 곡선형 디자인 요소들을 추가해 부드럽고 특별한 기업 소개 페이지를 디자인해봤습니다.
+                        </p>
+                        <button type="button" class="view_btn" data-aos="fade-up" data-aos-duration="1000">View <i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                <img src="images/grae_img.png" alt="gml" class="work_img" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"/>
+            </div>
+            <div class="serction_wrap serction4_wrap flex">
+                <div>
+                    <div class="moimg_wrap mobi_4" data-aos="fade-up" data-aos-duration="1000">
+                    </div>
+                    <h4 class="project_title" data-aos="fade-up" data-aos-duration="1000"><span class="title_num">04.</span> 공차 홈페이지 리디자인</h4>
+                    <div class="work_text">
+                        <p data-aos="fade-up" data-aos-duration="1000">
+                        기존의 공차 브랜드의 홈페이지는 내용들이 너무 모여있는 느낌이 답답하다는 생각이 들어 저만의 방식으로 좀 더 깔끔하고 시원한 느낌으로 작업을 했습니다.                 </p>
+                        <button type="button" class="view_btn" data-aos="fade-up" data-aos-duration="1000">View <i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                <img src="images/gong_img.png" alt="gml" class="work_img" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"/>
+            </div>
+            <div class="serction_wrap serction4_wrap flex">
+                <div>
+                    <div class="moimg_wrap mobi_5" data-aos="fade-up" data-aos-duration="1000">
+                    </div>
+                    <h4 class="project_title" data-aos="fade-up" data-aos-duration="1000"><span class="title_num">05.</span> 하회마을 홈페이지 리디자인</h4>
+                    <div class="work_text">
+                        <p data-aos="fade-up" data-aos-duration="1000">
+                            문화재 홈페이지 특성상 조금 디자인이 올드하다는 생각이 들어 한국적인 디자인 요소들을 살리고 저만의 방식으로 좀 더 깔끔하고 심플한 느낌으로 디자인해봤습니다.
+                        </p>
+                        <div class="btn_wrap">
+                            <button type="button" class="view_btn" data-aos="fade-up" data-aos-duration="1000">PC <i class="fa-solid fa-chevron-right"></i></button>
+                            <button type="button" class="view_btn" data-aos="fade-up" data-aos-duration="1000">Mobile <i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <img src="images/ha_img.png" alt="gml" class="work_img" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"/>
+            </div>
+            <div class="serction_wrap serction5_wrap flex">
+                <div>
+                    <div class="moimg_wrap mobi_6" data-aos="fade-up" data-aos-duration="1000">
+                    </div>
+                    <h4 class="project_title" data-aos="fade-up" data-aos-duration="1000"><span class="title_num">06.</span> 대한다원 반응형 홈페이지 리디자인</h4>
+                    <div class="work_text">
+                        <p data-aos="fade-up" data-aos-duration="1000">
+                        대한다원 홈페이지 역시 많은 젊은 사람들이 찾는 장소 중 한 곳이지만 아직 홈페이지 디자인 자체가 많이 올드 한 느낌이라 디자인을 재구성해 봤습니다.                       
+                        </p>
+                        <div class="btn_wrap">
+                            <button type="button" class="view_btn" data-aos="fade-up" data-aos-duration="1000">PC <i class="fa-solid fa-chevron-right"></i></button>
+                            <button type="button" class="view_btn" data-aos="fade-up" data-aos-duration="1000">Mobile <i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <img src="images/dea_img.png" alt="gml" class="work_img" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"/>
+            </div>
+            <div class="end_text">
+                <h3 data-aos="fade-up" data-aos-duration="1000">THANK YOU!<img src="images/se6_leaf.png" alt="잎" /></h3>
+                <p class="mid_text" data-aos="fade-up" data-aos-duration="1000">모든 작업물들은 온전히<br />
+                    저 혼자 100% 참여도로 작업했습니다.<br />
+                    언제나 발전하는 웹 퍼블리셔가 되겠습니다.<br />
+                    끝까지 봐주셔서 감사합니다 :)
+                </p>
+                <p data-aos="fade-up" data-aos-duration="1000">
+                    lim1346@naver.com<br />
+                    010.2598.4186
+                </p>
             </div>
         </section>
-        <section id="section3" class="second_section">
-            <p>Cooper Perkins combines enlightened engineering with years of<br>
-                substantive experience to solve our partners’ most challenging<br>
-                business problems.</p>
-        </section>
     </div>
-    <footer>
-        <div class="footer_container">
-            <p>Copyright © 2022 HENRY All rights reserved.</p>
-        </div>
-    </footer>
+    <script> 
+        AOS.init();
+    </script>
 </body>
 
 </html>

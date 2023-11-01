@@ -18,21 +18,25 @@ $(window).ready(function () {
         $('.tab_line').css('left', '0');
         $('.tab_body_1').addClass('on');
         $('.tab_body_1').siblings().removeClass('on');
+        $('.leaf_1').toggleClass('on');
     });
     $('.tab_menu2').click(function () {
         $('.tab_line').css('left', '25%');
         $('.tab_body_2').addClass('on');
         $('.tab_body_2').siblings().removeClass('on');
+        $('.leaf_2').toggleClass('on');
     });
     $('.tab_menu3').click(function () {
         $('.tab_line').css('left', '50%');
         $('.tab_body_3').addClass('on');
         $('.tab_body_3').siblings().removeClass('on');
+        $('.leaf_3').toggleClass('on');
     });
     $('.tab_menu4').click(function () {
         $('.tab_line').css('left', '75%');
         $('.tab_body_4').addClass('on');
         $('.tab_body_4').siblings().removeClass('on');
+        $('.leaf_4').toggleClass('on');
     });
 
     $('.tab_ul div').click(function () {
