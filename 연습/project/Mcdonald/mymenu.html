@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mcdonald</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> 
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+<body class="mymenu">
+    <div class="wrap">
+        <div class="header">
+            <button type="button" class="back_btn" onclick="history.back()"></button>
+            <h2 class="header_title">마이 메뉴</h2>
+            <div id="menu">
+                <div id="menu-bar" onclick="menuOnClick()">
+                  <div id="bar1" class="bar"></div>
+                  <div id="bar2" class="bar"></div>
+                  <div id="bar3" class="bar"></div>
+                </div>
+                <nav class="nav" id="nav">
+                  <ul>
+                    <li><a href="main.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="news.html">Event</a></li>
+                    <li><a href="mymenu.html">My menu</a></li>
+                  </ul>
+                </nav> 
+              </div>
+              <div class="menu-bg" id="menu-bg"></div>
+        </div>
+        <div class="container">
+           <div class="gray_box">
+              <div class="text_wrap">
+                <p class="user_name"><span>임재형</span>님</p>
+                <P class="user_point">Point <span>10500</span>P</P>
+              </div>
+              <img src="images/qr_code.png" alt="큐알코드" class="qrcode" />
+           </div>
+           <ul class="mymenu_list">
+              <li>
+                <a href="#">내정보</a>
+                <img src="images/back_btn.png" class="right_arrow" alt="오른쪽버튼"/>
+              </li>
+              <li>
+                <a href="#">쿠폰함</a>
+                <img src="images/back_btn.png" class="right_arrow" alt="오른쪽버튼"/>
+              </li>
+              <li>
+                <a href="#">주문내역</a>
+                <img src="images/back_btn.png" class="right_arrow" alt="오른쪽버튼"/>
+              </li>
+              <li>
+                <a href="#">고객센터</a>
+                <img src="images/back_btn.png" class="right_arrow" alt="오른쪽버튼"/>
+              </li>
+              <li>
+                <a href="#">환경설정</a>
+                <img src="images/back_btn.png" class="right_arrow" alt="오른쪽버튼"/>
+              </li>
+           </ul>
+        </div>
+    </div>
+</body>

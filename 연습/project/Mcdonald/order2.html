@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mcdonald</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> 
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+<body class="order order2">
+    <div class="wrap">
+        <div class="header">
+            <button type="button" class="back_btn" onclick="history.back()"></button>
+            <div id="menu">
+                <div id="menu-bar" onclick="menuOnClick()">
+                  <div id="bar1" class="bar"></div>
+                  <div id="bar2" class="bar"></div>
+                  <div id="bar3" class="bar"></div>
+                </div>
+                <nav class="nav" id="nav">
+                  <ul>
+                    <li><a href="main.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="news.html">Event</a></li>
+                    <li><a href="mymenu.html">My menu</a></li>
+                  </ul>
+                </nav> 
+              </div>
+              <div class="menu-bg" id="menu-bg"></div>
+        </div>
+        <div class="container">
+            <div class="menu_img_wrap">
+                <img src="images/order_menu2.png" alt="맥모닝1"/>
+                <div class="order_content">
+                    <p class="title">빅맥</p>
+                    <p class="kcal">305 kcal</p>
+                    <div class="flex top_container">
+                        <p class="price">4,600<span class="won">원</span></p>
+                        <form id='myform' method='POST' class='quantity' action='#'>
+                            <input type='button' value='-' class='qtyminus minus' field='quantity' />
+                            <input type='text' name='quantity' value='0' class='qty' />
+                            <input type='button' value='+' class='qtyplus plus' field='quantity' />
+                          </form>
+                    </div>
+                    <div class="bottom_container">
+                        <p class="sub_title">사이즈 선택</p>
+                        <div class="check_wrap">
+                            <div class="flex">
+                                <p class="second_title">단품</p>
+                                <label class="checkbox" for="bmw">
+                                    <input type="radio" name="car" value="bmw" id="bmw">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="flex">
+                                <p class="second_title">세트</p>
+                                <label class="checkbox" for="audi">
+                                    <input type="radio" name="car" checked value="audi" id="audi">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom_container container2">
+                        <div class="title_flex">
+                            <p class="sub_title">토핑</p>
+                            <p class="small_text">* 취향에 맞게 재료를 선택해보세요.</p>
+                        </div>
+                        <div class="check_wrap">
+                            <div class="flex">
+                                <p class="second_title">베이컨</p>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="color" checked>
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="flex">
+                                <p class="second_title">양상추</p>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="color" checked>
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="flex">
+                                <p class="second_title">양파</p>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="color" checked>
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="flex">
+                                <p class="second_title">계란</p>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="color" checked>
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="flex">
+                                <p class="second_title">피클</p>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="color" checked>
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom_btn_wrap">
+                        <button type="button" class="cart_btn" onClick="location.href='cart.html'">장바구니</button>
+                        <button type="button" class="buy_btn" onClick="location.href='orderFinish.html'">바로 주문</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

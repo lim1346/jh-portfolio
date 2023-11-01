@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mcdonald</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> 
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+<body class="order_finish">
+    <div class="wrap">
+        <div class="header">
+            <button type="button" class="back_btn" onclick="history.back()"></button>
+            <div id="menu">
+                <div id="menu-bar" onclick="menuOnClick()">
+                  <div id="bar1" class="bar"></div>
+                  <div id="bar2" class="bar"></div>
+                  <div id="bar3" class="bar"></div>
+                </div>
+                <nav class="nav" id="nav">
+                  <ul>
+                    <li><a href="main.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="news.html">Event</a></li>
+                    <li><a href="mymenu.html">My menu</a></li>
+                  </ul>
+                </nav> 
+              </div>
+              <div class="menu-bg" id="menu-bg"></div>
+        </div>
+        <div class="container">
+            <img src="images/check_icon.png" alt="check" class="check"/>
+            <div class="content_1 flex">
+                <p class="title">주문 완료</p>
+                <p class="time">도착 예정시간 : 40분</p>
+            </div>
+            <div class="content_2">
+                <p class="title">베이컨 애그 맥머핀 SET</p>
+                <p>베이컨 에그 맥머핀</p>
+                <p>콜라 - Zero</p>
+                <p>후렌치 후라이</p>
+            </div>
+            <div class="content_3">
+                <img src="images/barcode.png" alt="바코드" class="barcode">
+                <button type="button" class="main_btn" onClick="location.href='main.html'">메인으로 가기</button>
+            </div>
+        </div>
+    </div>
+</body>

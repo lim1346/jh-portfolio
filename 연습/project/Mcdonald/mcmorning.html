@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mcdonald</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> 
+    <script type="text/javascript" src="js/main.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+</head>
+<body>
+    <div class="wrap">
+        <div class="header">
+            <button type="button" class="back_btn" onclick="history.back()"></button>
+            <h2 class="header_title">메뉴</h2>
+            <div id="menu">
+                <div id="menu-bar" onclick="menuOnClick()">
+                  <div id="bar1" class="bar"></div>
+                  <div id="bar2" class="bar"></div>
+                  <div id="bar3" class="bar"></div>
+                </div>
+                <nav class="nav" id="nav">
+                  <ul>
+                    <li><a href="main.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="news.html">Event</a></li>
+                    <li><a href="mymenu.html">My menu</a></li>
+                  </ul>
+                </nav> 
+              </div>
+              <div class="menu-bg" id="menu-bg"></div>
+        </div>
+        <div class="container">
+            <h4 class="sub_tit">맥모닝</h4>
+            <div class="menu_wrap">
+                <div class="menu_box">
+                    <img src="images/morning_1.jpg" alt="맥모닝1" onClick="location.href='order.html'" />
+                    <p class="menu_name">베이컨 에그 맥머핀</p>
+                    <p class="price">3,600</p>
+                </div>
+                <div class="menu_box">
+                    <img src="images/morning_3.jpg" alt="맥모닝1" class="soldOut" />
+                    <p class="menu_name">소세지 애그 맥머핀</p>
+                    <p class="price">3,800</p>
+                </div>
+                <div class="menu_box">
+                    <img src="images/morning_5.jpg" alt="맥모닝1" class="soldOut" />
+                    <p class="menu_name">소세지 맥머핀</p>
+                    <p class="price">3,100</p>
+                </div>
+                <div class="menu_box">
+                    <img src="images/morning_2.jpg" alt="맥모닝1" class="soldOut" />
+                    <p class="menu_name">핫케이크</p>
+                    <p class="price">2,800</p>
+                </div>
+                <div class="menu_box">
+                    <img src="images/morning_4.jpg" alt="맥모닝1" class="soldOut"/>
+                    <p class="menu_name">빅 블랙퍼스트</p>
+                    <p class="price">4,800</p>
+                </div>
+                <div class="menu_box">
+                    <img src="images/morning_6.jpg" alt="맥모닝1" class="soldOut" />
+                    <p class="menu_name">소세지 브리또</p>
+                    <p class="price">3,800</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

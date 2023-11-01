@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mcdonald</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> 
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+<body class="cart">
+    <div class="wrap">
+        <div class="header">
+            <button type="button" class="back_btn" onclick="history.back()"></button>
+            <h2 class="header_title">장바구니</h2>
+            <div id="menu">
+                <div id="menu-bar" onclick="menuOnClick()">
+                  <div id="bar1" class="bar"></div>
+                  <div id="bar2" class="bar"></div>
+                  <div id="bar3" class="bar"></div>
+                </div>
+                <nav class="nav" id="nav">
+                  <ul>
+                    <li><a href="main.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="news.html">Event</a></li>
+                    <li><a href="mymenu.html">My menu</a></li>
+                  </ul>
+                </nav> 
+              </div>
+              <div class="menu-bg" id="menu-bg"></div>
+        </div>
+        <div class="container">
+            <div class="flex">
+                <label class="checkbox">
+                    <input type="checkbox" name="color" checked>
+                    <span class="checkmark"></span>
+                </label>
+                <div class="img_wrap">
+                    <img src="images/order_menu.png" alt="햄버거" />
+                </div>
+                <div class="grid">
+                    <p class="menu_name">베이컨 에그 맥머핀</p>
+                    <div class="flex">
+                        <p class="price">4,600원</p>
+                        <form id='myform' method='POST' class='quantity' action='#'>
+                            <input type='button' value='-' class='qtyminus minus' field='quantity' />
+                            <input type='text' name='quantity' value='0' class='qty' />
+                            <input type='button' value='+' class='qtyplus plus' field='quantity' />
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="flex">
+                <label class="checkbox">
+                    <input type="checkbox" name="color" checked>
+                    <span class="checkmark"></span>
+                </label>
+                <div class="img_wrap">
+                    <img src="images/order_menu2.png" alt="햄버거" />
+                </div>
+                <div class="grid">
+                    <p class="menu_name">빅맥</p>
+                    <div class="flex">
+                        <p class="price">4,600원</p>
+                        <form id='myform' method='POST' class='quantity' action='#'>
+                            <input type='button' value='-' class='qtyminus minus' field='quantity' />
+                            <input type='text' name='quantity' value='0' class='qty' />
+                            <input type='button' value='+' class='qtyplus plus' field='quantity' />
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="flex">
+                <label class="checkbox">
+                    <input type="checkbox" name="color" checked>
+                    <span class="checkmark"></span>
+                </label>
+                <div class="img_wrap">
+                    <img src="images/order_menu3.png" alt="햄버거" />
+                </div>
+                <div class="grid">
+                    <p class="menu_name">소세지 에그 맥머핀</p>
+                    <div class="flex">
+                        <p class="price">3,600원</p>
+                        <form id='myform' method='POST' class='quantity' action='#'>
+                            <input type='button' value='-' class='qtyminus minus' field='quantity' />
+                            <input type='text' name='quantity' value='0' class='qty' />
+                            <input type='button' value='+' class='qtyplus plus' field='quantity' />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer_menu">
+            <div class="footer_wrap">
+                <div class="order_list">
+                    <div class="flex">
+                        <p>베이컨 에그 맥머핀</p>
+                        <p class="price">3,600원</p>
+                    </div>
+                    <div class="flex">
+                        <p>빅맥</p>
+                        <p class="price">4,600원</p>
+                    </div>
+                    <div class="flex">
+                        <p>소세지 에그 맥머핀</p>
+                        <p class="price">3,600원</p>
+                    </div>
+                </div>
+                <div class="total_wrap flex">
+                    <p>총 주문금액</p>
+                    <p class="price">11,800원</p>
+                </div>
+                <button type="button" class="order_btn" onClick="location.href='orderFinish.html'">주문하기</button>
+            </div>
+        </div>
+    </div>
+</body>

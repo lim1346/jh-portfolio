@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mcdonald</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> 
+    <script type="text/javascript" src="js/main.js"></script>
+    <link rel="shortcut icon" href="favicon.ico">
+    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+</head>
+<body>
+    <div class="wrap">
+        <div class="header">
+            <img class="logo" src="images/logo.png" alt="logo" />
+            <div id="menu">
+                <div id="menu-bar" onclick="menuOnClick()">
+                  <div id="bar1" class="bar"></div>
+                  <div id="bar2" class="bar"></div>
+                  <div id="bar3" class="bar"></div>
+                </div>
+                <nav class="nav" id="nav">
+                  <ul>
+                    <li><a href="main.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="news.html">Event</a></li>
+                    <li><a href="mymenu.html">My menu</a></li>
+                  </ul>
+                </nav> 
+              </div>
+              <div class="menu-bg" id="menu-bg"></div>
+        </div>
+        <main>
+            <div>
+                <p class="main_title">안녕하세요 <span class="user">임재형</span>님!</p>
+                <p class="sub_title">어떤 메뉴로 준비해드릴까요?</p>
+            </div>
+            <div class="search">
+                <input type="search" class="menu_search" placeholder="메뉴를 검색해보세요!" >
+                <button type="button" class="search_icon">검색</button>
+            </div>
+            <div class="menu_slider">
+                <h3 class="bold_title">메뉴</h3>
+                <div class="center">
+                    <div class="menu_box menu_box1" onClick="location.href='mcmorning.html'">
+                        <p>맥모닝</p>
+                    </div>
+                    <div class="menu_box menu_box2" onClick="location.href='hambugers.html'">
+                        <p>햄버거</p>
+                    </div>
+                    <div class="menu_box menu_box3">
+                        <p>사이드</p>
+                    </div>
+                    <div class="menu_box menu_box4">
+                        <p>디저트</p>
+                    </div>
+                </div>
+            </div>
+            <div class="news">
+                <h3 class="bold_title">뉴스</h3>
+                <div class="news_wrap">
+                    <button type="button" class="news1">뉴스1</button>
+                    <button type="button" class="news2">뉴스1</button>
+                    <button type="button" class="news3">뉴스1</button>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
